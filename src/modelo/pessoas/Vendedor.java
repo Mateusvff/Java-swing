@@ -1,4 +1,4 @@
-package pessoas;
+package modelo.pessoas;
 
 public class Vendedor extends Pessoa {
 	private int quantVendida;

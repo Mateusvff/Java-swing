@@ -1,4 +1,4 @@
-package venda;
+package modelo.venda;
 
 public class Venda {
 	

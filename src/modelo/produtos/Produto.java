@@ -1,8 +1,7 @@
-package produtos;
+package modelo.produtos;
 
 import java.util.List;
-
-import pessoas.Fornecedor;
+import modelo.pessoas.Fornecedor;
 
 public abstract class Produto {
 	protected String marca;

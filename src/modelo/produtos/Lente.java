@@ -1,4 +1,4 @@
-package produtos;
+package modelo.produtos;
 
 public class Lente extends Produto {
 	private double grauLente;

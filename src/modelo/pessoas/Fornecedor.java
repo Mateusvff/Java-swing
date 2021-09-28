@@ -1,4 +1,4 @@
-package pessoas;
+package modelo.pessoas;
 
 public class Fornecedor {
 	

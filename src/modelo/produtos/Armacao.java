@@ -1,4 +1,4 @@
-package produtos;
+package modelo.produtos;
 
 public class Armacao extends Produto{
 	private String genero;
