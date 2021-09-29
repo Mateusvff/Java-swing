@@ -1,43 +1,61 @@
 package view;
 
 import java.awt.Font;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 
-public class TelaProdutos {
+public class TelaProdutos implements ActionListener {
 	private static JFrame principalProdutos = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Produtos");
-	private static JButton visualizar = new JButton("Visualizar");
-	private static JButton cadastrar = new JButton("Cadastrar");
-	private static JButton alterar = new JButton("Alterar");
-	private static JButton deletar = new JButton("Deletar");
-	private static JButton buscar = new JButton("Buscar");
+	private static JButton oculosDeSol = new JButton("Óculos de Sol");
+	private static JButton armacao = new JButton("Armação");
+	private static JButton lentes = new JButton("Lentes");
+	private TelaODSMenu telaODSMenu;
+
+	// Construtor de tela das opções de produtos 
 
 	public TelaProdutos() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(147, 10, 150, 30);
 		
 		principalProdutos.add(titulo);
-		principalProdutos.add(visualizar);
-		principalProdutos.add(cadastrar);
-		principalProdutos.add(alterar);
-		principalProdutos.add(deletar);
-		principalProdutos.add(buscar);
+		principalProdutos.add(oculosDeSol);
+		principalProdutos.add(armacao);
+		principalProdutos.add(lentes);
 		
-		visualizar.setBounds(140, 50, 100, 30);
-		cadastrar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
+		oculosDeSol.setBounds(90, 50, 200, 30);
+		armacao.setBounds(90, 100, 200, 30);
+		lentes.setBounds(90, 150, 200, 30);
 		
 		principalProdutos.setLayout(null);
 
-		principalProdutos.setSize(400, 350);
+		principalProdutos.setSize(400, 300);
 		principalProdutos.setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		TelaProdutos telaProdutos = new TelaProdutos();
+		TelaProdutos menu = new TelaProdutos();
+		
+		oculosDeSol.addActionListener(menu);
+		armacao.addActionListener(menu);
+		lentes.addActionListener(menu);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+		
+		if(src == oculosDeSol) {
+			telaODSMenu = new TelaODSMenu();
+		}
+		
+		if(src == armacao) {
+			TelaArmacaoMenu TelaArmacaoMenu = new TelaArmacaoMenu();
+		}
+		
+		if(src == lentes) {
+			TelaLentesMenu TelaLentesMenu = new TelaLentesMenu();
+		}
 	}
 }
