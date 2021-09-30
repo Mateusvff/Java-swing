@@ -4,7 +4,9 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class TelaMenu implements ActionListener {
 	private static JFrame principal = new JFrame("Loja de Óculos");
@@ -31,7 +33,6 @@ public class TelaMenu implements ActionListener {
 		principal.setSize(400, 250);
 		principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		principal.setVisible(true);
-
 	}
 
 	public static void main(String[] args) {

@@ -1,15 +1,31 @@
 package view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class TelaCadastroCliente {
+import controle.ControleCliente;
 
+public class TelaCadastroCliente {
+	private static JFrame frame = new JFrame("Loja de Óculos");
+
+	public TelaCadastroCliente() {
+		frame.setSize(400, 280);
+
+		JPanel panel = new JPanel();
+		frame.add(panel);
+		placeComponents(panel);
+
+		frame.setVisible(true);
+	}
+	
 	public static void main(String[] args) {
-		JFrame frame = new JFrame("Loja de Óculos");
 		frame.setSize(400, 280);
 
 		JPanel panel = new JPanel();
@@ -66,5 +82,25 @@ public class TelaCadastroCliente {
 		JButton registerButton = new JButton("Cadastrar");
 		registerButton.setBounds(140, 180, 100, 25);
 		panel.add(registerButton);
+		
+		
+		registerButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String nome = nomeText.getText();
+				String email = emailText.getText();
+				String endereco = enderecoText.getText();
+				
+				ControleCliente controleCliente = new ControleCliente();
+				controleCliente.cadastroClientes(nome, "", "", "", "");
+				
+				JOptionPane.showMessageDialog(null, "Cadastro realizado");
+				
+				new TelaMenu();
+				
+				frame.dispose();
+			}
+		});
 	}
 }
