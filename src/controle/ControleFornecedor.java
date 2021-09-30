@@ -7,7 +7,7 @@ import modelo.pessoas.Fornecedor;
 
 public class ControleFornecedor {
 
-	public List<Fornecedor> fornecedores = new ArrayList<>();
+	public static List<Fornecedor> fornecedores = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 
 	// CADASTRAR FORNECEDOR

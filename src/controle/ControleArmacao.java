@@ -1,15 +1,14 @@
 package controle;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
-
 import modelo.produtos.Armacao;
-import modelo.produtos.Lente;
 
 public class ControleArmacao {
 
-	public List<Armacao> armacoes = new ArrayList<>();
+	public static List<Armacao> armacoes = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 
 	// CADASTRAR ARMAÇÃO

@@ -8,8 +8,8 @@ public class Cliente extends Pessoa {
 		this.quantComprada = quantComprada;
 	}
 	
-	public Cliente(String nome, int idade,String telefone, String endereco, String cpf, String email) {
-		super(nome, idade, telefone, endereco, cpf, email);
+	public Cliente(String nome, String telefone, String endereco, String cpf, String email) {
+		super(nome, telefone, endereco, cpf, email);
 	}
 	
 	
@@ -17,7 +17,6 @@ public class Cliente extends Pessoa {
 	public String toString() {
 		return "Dados do cliente: \n" + 
 				"Nome: " + nome + "\n" +
-				"Idade: " + idade + "\n" +
 				"CPF: " + cpf + "\n" +
 				"Email: " + email + "\n" +
 				"Telefone: " + telefone + "\n" + 

@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 import modelo.produtos.OculosDeSol;
 
-public class ControleODS {
+public class ControleOds {
 
-	public List<OculosDeSol> ods = new ArrayList<>();
+	public static List<OculosDeSol> ods = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 	
 	// CADASTRAR ODS

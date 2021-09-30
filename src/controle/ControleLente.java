@@ -8,7 +8,7 @@ import modelo.produtos.Lente;
 
 public class ControleLente {
 
-	public List<Lente> lentes = new ArrayList<>();
+	public static List<Lente> lentes = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 
 	// CADASTRAR LENTE
@@ -29,7 +29,7 @@ public class ControleLente {
 		System.out.print("Digite a cor da lente: ");
 		String cor = sc.nextLine();
 
-		System.out.print("Digite a cor da lente: ");
+		System.out.print("Digite o grau da lente: ");
 		double grau = sc.nextDouble();
 
 		Lente lente = new Lente(marca, modelo, codigo, material, cor, grau);

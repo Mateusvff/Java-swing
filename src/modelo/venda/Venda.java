@@ -1,17 +1,23 @@
 package modelo.venda;
 
+import modelo.pessoas.Cliente;
+import modelo.pessoas.Vendedor;
+import modelo.produtos.Produto;
+
 public class Venda {
 	
-	private String cliente;
-	private String vendedor;
-	private String produto;
+	private Cliente cliente;
+	private Vendedor vendedor;
+	private Produto produto;
 	private int quantVendida;
 	private double valorVenda;
 
-	public Venda(String cliente, String vendedor, String produto) {
+	public Venda(Cliente cliente, Vendedor vendedor, Produto produto, int quantVendida, double valorVenda) {
 		this.cliente = cliente;
 		this.produto = produto;
 		this.vendedor = vendedor;
+		this.quantVendida = quantVendida;
+		this.valorVenda = valorVenda;
 	}
 	
 	@Override
@@ -24,32 +30,32 @@ public class Venda {
 				"Valor da venda: " + valorVenda;
 	}
 
-	public String getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 
 
-	public void setCliente(String cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
 
-	public String getVendedor() {
+	public Vendedor getVendedor() {
 		return vendedor;
 	}
 
 
-	public void setVendedor(String vendedor) {
+	public void setVendedor(Vendedor vendedor) {
 		this.vendedor = vendedor;
 	}
 
 
-	public String getProduto() {
+	public Produto getProduto() {
 		return produto;
 	}
 
 
-	public void setProduto(String produto) {
+	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
 

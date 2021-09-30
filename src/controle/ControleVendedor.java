@@ -7,7 +7,7 @@ import modelo.pessoas.Vendedor;
 
 public class ControleVendedor {
 
-	public List<Vendedor> vendedores = new ArrayList<>();
+	public static List<Vendedor> vendedores = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 
 	// CADASTRAR VENDEDOR

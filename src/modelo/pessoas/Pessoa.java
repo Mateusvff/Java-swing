@@ -2,7 +2,6 @@ package modelo.pessoas;
 
 public abstract class Pessoa {
 	protected String nome;
-	protected int idade;
 	protected String telefone;
 	protected String endereco;
 	protected String cpf;
@@ -14,9 +13,8 @@ public abstract class Pessoa {
 		this.email = email;
 	}
 	
-	public Pessoa(String nome, int idade, String telefone, String endereco, String cpf, String email) {
+	public Pessoa(String nome, String telefone, String endereco, String cpf, String email) {
 		this.nome = nome;
-		this.idade = idade;
 		this.telefone = telefone;
 		this.endereco = endereco;
 		this.cpf = cpf;
@@ -31,13 +29,6 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 	
-	public int getIdade() {
-		return idade;
-	}
-	
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
 	
 	public String getTelefone() {
 		return telefone;

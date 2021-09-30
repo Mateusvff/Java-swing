@@ -6,19 +6,16 @@ import java.util.Scanner;
 
 import modelo.pessoas.Cliente;
 
-public class ControleClientes {
+public class ControleCliente {
 
-	public List<Cliente> clientes = new ArrayList<>();
+	public static List<Cliente> clientes = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
+	
 
 	// CADASTRAR CLIENTES
 	public void cadastroClientes() {
 		System.out.print("Digite o nome do cliente: ");
 		String nome = sc.nextLine();
-
-		System.out.print("Digite a idade do cliente: ");
-		int idade = sc.nextInt();
-		sc.nextLine();
 
 		System.out.print("Digite o telefone do cliente: ");
 		String telefone = sc.nextLine();
@@ -32,7 +29,7 @@ public class ControleClientes {
 		System.out.print("Digite o email do cliente: ");
 		String email = sc.nextLine();
 
-		Cliente cliente = new Cliente(nome, idade, telefone, endereco, cpf, email);
+		Cliente cliente = new Cliente(nome, telefone, endereco, cpf, email);
 		clientes.add(cliente);
 	}
 
@@ -48,6 +45,18 @@ public class ControleClientes {
 			}
 		}
 		return "Usuário não encontrado ! ";
+	}
+	
+	public Cliente buscarClientesObject() {
+		System.out.print("Digite o CPF do cliente (somente números) à ser verificado: ");
+		String cpfBusca = sc.next();
+
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getCpf().equals(cpfBusca)) {
+				return clientes.get(i);
+			}
+		}
+		return null;
 	}
 
 	// VISUALIZAR CLIENTES
@@ -65,10 +74,9 @@ public class ControleClientes {
 
 		System.out.println("SELECIONE A OPÇÃO DESEJADA: ");
 		System.out.println("1) ALTERAR NOME");
-		System.out.println("2) ALTERAR IDADE");
-		System.out.println("3) ALTERAR TELEFONE");
-		System.out.println("4) ALTERAR ENDEREÇO");
-		System.out.println("5) ALTERAR EMAIL");
+		System.out.println("2) ALTERAR TELEFONE");
+		System.out.println("3) ALTERAR ENDEREÇO");
+		System.out.println("4) ALTERAR EMAIL");
 
 		int opcao = sc.nextInt();
 		sc.nextLine();
@@ -86,17 +94,6 @@ public class ControleClientes {
 			break;
 
 		case 2:
-			System.out.print("Digite a idade para o qual deseja alterar: ");
-			int idade = sc.nextInt();
-
-			for (int i = 0; i < clientes.size(); i++) {
-				if (clientes.get(i).getCpf().equals(cpf)) {
-					clientes.get(i).setIdade(idade);
-				}
-			}
-			break;
-
-		case 3:
 			System.out.print("Digite o telefone para o qual deseja alterar: ");
 			String telefone = sc.nextLine();
 
@@ -107,7 +104,7 @@ public class ControleClientes {
 			}
 			break;
 
-		case 4:
+		case 3:
 			System.out.print("Digite o endereço para o qual deseja alterar: ");
 			String endereco = sc.nextLine();
 
@@ -118,7 +115,7 @@ public class ControleClientes {
 			}
 			break;
 
-		case 5:
+		case 4:
 			System.out.print("Digite o email para o qual deseja alterar: ");
 			String email = sc.nextLine();
 
