@@ -1,42 +1,53 @@
 package view;
 
 import java.awt.Font;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class TelaPessoa {
-	private static JFrame principalPessoas = new JFrame("Loja de Óculos");
+
+public class TelaPessoa implements ActionListener {
+	private static JFrame principalPessoa = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Pessoas");
-	private static JButton visualizar = new JButton("Visualizar");
-	private static JButton cadastrar = new JButton("Cadastrar");
-	private static JButton alterar = new JButton("Alterar");
-	private static JButton deletar = new JButton("Deletar");
-	private static JButton buscar = new JButton("Buscar");
+	private static JButton funcionario = new JButton("Funcionários");
+	private static JButton cliente = new JButton("Clientes");
+
+	// Construtor de tela das opções de funcionários e clientes
 
 	public TelaPessoa() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(147, 10, 150, 30);
 		
-		principalPessoas.add(titulo);
-		principalPessoas.add(visualizar);
-		principalPessoas.add(cadastrar);
-		principalPessoas.add(alterar);
-		principalPessoas.add(deletar);
-		principalPessoas.add(buscar);
+		principalPessoa.add(titulo);
+		principalPessoa.add(funcionario);
+		principalPessoa.add(cliente);
 		
-		visualizar.setBounds(140, 50, 100, 30);
-		cadastrar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
+		funcionario.setBounds(90, 50, 200, 30);
+		cliente.setBounds(90, 100, 200, 30);
 		
-		principalPessoas.setLayout(null);
+		principalPessoa.setLayout(null);
 
-		principalPessoas.setSize(400, 350);
-		principalPessoas.setVisible(true);
+		principalPessoa.setSize(400, 300);
+		principalPessoa.setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		TelaPessoa telaPessoa = new TelaPessoa();
+		TelaPessoa menu = new TelaPessoa();
+		
+		funcionario.addActionListener(menu);
+		cliente.addActionListener(menu);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+		
+		if(src == funcionario) {
+			new TelaFuncionarioMenu();
+		}
+		
+		if(src == cliente) {
+			new TelaClienteMenu();
+		}
+		
 	}
 }
