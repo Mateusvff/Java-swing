@@ -27,44 +27,43 @@ public class Fornecedor {
 				"email: " + email + "\n";
 	}
 
-
-	public String getNomeEmpresa() {
+	public String getNome() {
 		return nome;
 	}
-	
-	public void setNomeEmpresa(String nomeEmpresa) {
-		this.nome = nomeEmpresa;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
+
 	public String getCnpj() {
 		return cnpj;
 	}
-	
+
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-	
-	public String getTelefoneEmpresa() {
+
+	public String getTelefone() {
 		return telefone;
 	}
-	
-	public void setTelefoneEmpresa(String telefoneEmpresa) {
-		this.telefone = telefoneEmpresa;
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
-	
-	public String getEnderecoEmpresa() {
+
+	public String getEndereco() {
 		return endereco;
 	}
-	
-	public void setEnderecoEmpresa(String enderecoEmpresa) {
-		this.endereco = enderecoEmpresa;
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
-	
-	public String getEmailEmpresa() {
+
+	public String getEmail() {
 		return email;
 	}
-	
-	public void setEmailEmpresa(String emailEmpresa) {
-		this.email = emailEmpresa;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

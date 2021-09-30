@@ -1,5 +1,3 @@
-// CRUDs e BUSCA DE CLIENTES
-
 package controle;
 
 import java.util.ArrayList;
@@ -64,7 +62,7 @@ public class ControleClientes {
 
 		System.out.print("Digite o cpf do cliente que deseja alterar as informações: ");
 		String cpf = sc.next();
-		
+
 		System.out.println("SELECIONE A OPÇÃO DESEJADA: ");
 		System.out.println("1) ALTERAR NOME");
 		System.out.println("2) ALTERAR IDADE");
@@ -80,7 +78,7 @@ public class ControleClientes {
 			System.out.print("Digite o nome para o qual deseja alterar: ");
 			String nome = sc.nextLine();
 
-			for (int i=0; i < clientes.size(); i++) {
+			for (int i = 0; i < clientes.size(); i++) {
 				if (clientes.get(i).getCpf().equals(cpf)) {
 					clientes.get(i).setNome(nome);
 				}
@@ -130,8 +128,8 @@ public class ControleClientes {
 				}
 			}
 			break;
-			
-		default: 
+
+		default:
 			System.out.println("Seleção Inválida");
 		}
 
@@ -141,12 +139,11 @@ public class ControleClientes {
 	public void deletarClientes() {
 		System.out.println("Digite o CPF do cliente (somente números) à ser apagado: ");
 		String cpfBusca = sc.next();
-		
-		for(int i=0; i<clientes.size(); i++) {
-			if(clientes.get(i).getCpf().equals(cpfBusca)) {
+
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getCpf().equals(cpfBusca)) {
 				clientes.remove(i);
 			}
 		}
 	}
-	
 }

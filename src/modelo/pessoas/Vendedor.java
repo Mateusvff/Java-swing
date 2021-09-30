@@ -4,9 +4,8 @@ public class Vendedor extends Pessoa {
 	private int quantVendida;
 	private double salario;
 
-	public Vendedor(String nome, String cpf, String email, int quantVendida, double salario) {
+	public Vendedor(String nome, String cpf, String email, double salario) {
 		super(nome, cpf, email);
-		this.quantVendida = quantVendida;
 		this.salario = salario;
 	}
 	

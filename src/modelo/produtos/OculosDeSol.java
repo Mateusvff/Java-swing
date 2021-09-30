@@ -3,8 +3,8 @@ package modelo.produtos;
 public class OculosDeSol extends Produto {
 	private String genero;
 	
-	public OculosDeSol(String marca, String modelo, int id, String genero) {
-		super(marca, modelo, id);
+	public OculosDeSol(String marca, String modelo, String codigo, String material, String cor, String genero) {
+		super(marca, modelo, codigo, material, cor);
 		this.genero = genero;
 	}
 

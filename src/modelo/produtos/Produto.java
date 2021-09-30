@@ -6,7 +6,7 @@ import modelo.pessoas.Fornecedor;
 public abstract class Produto {
 	protected String marca;
 	protected String modelo;
-	protected int id;
+	protected String codigo;
 	protected String material;
 	protected String cor;
 	protected int quantidade;
@@ -15,10 +15,12 @@ public abstract class Produto {
 	protected double lucro;
 	protected List<Fornecedor> fornecedor;
 	
-	public Produto(String marca, String modelo, int id) {
+	public Produto(String marca, String modelo, String codigo, String material, String cor) {
 		this.marca = marca;
 		this.modelo = modelo;
-		this.id = id;
+		this.codigo = codigo;
+		this.material = material;
+		this.cor = cor;
 	}
 		
 	public String getMarca() {
@@ -37,12 +39,12 @@ public abstract class Produto {
 		this.modelo = modelo;
 	}
 	
-	public int getId() {
-		return id;
+	public String getCodigo() {
+		return codigo;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	
 	public String getMaterial() {
