@@ -50,11 +50,5 @@ public class TelaApagaCliente {
 		
 		ControleCliente controleCliente = new ControleCliente();
 		controleCliente.deletarClientes(cpfDelete);
-		
-		JOptionPane.showMessageDialog(null, "Cliente apagado com sucesso!");
-		
-		new Principal();
-		
-		frame.dispose();
 	}
 }

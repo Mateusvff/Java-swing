@@ -37,8 +37,8 @@ public class TelaCadastroCliente {
 		MaskFormatter mascaraTel = null;
 
 		try {
-			mascaraCpf = new MaskFormatter("#########-##");
-			mascaraTel = new MaskFormatter("(##)#####-####");
+			mascaraCpf = new MaskFormatter("###.###.###-##");
+			mascaraTel = new MaskFormatter("(##) #####-####");
 		} catch (ParseException e1) {
 
 			System.err.println("Erro na formatação" + e1.getMessage());
