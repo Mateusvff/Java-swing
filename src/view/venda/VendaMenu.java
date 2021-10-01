@@ -6,12 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import view.fornecedor.TelaAlteraFornecedor;
-import view.fornecedor.TelaApagaFornecedor;
-import view.fornecedor.TelaBuscaFornecedor;
-import view.fornecedor.TelaCadastroFornecedor;
-import view.fornecedor.TelaVisualizaFornecedor;
-
 
 public class VendaMenu implements ActionListener{
 	private static JFrame principalVendas = new JFrame("Loja de Óculos");
@@ -45,9 +39,6 @@ public class VendaMenu implements ActionListener{
 		principalVendas.setVisible(true);
 	}
 	
-	public static void main(String[] args) {
-		VendaMenu Vendas = new VendaMenu();
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

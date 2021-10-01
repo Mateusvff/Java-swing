@@ -8,10 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import view.cliente.ClienteMenu;
-import view.fornecedor.FornecedorMenu;
-import view.vendedor.VendedorMenu;
-
 public class OculosMenu implements ActionListener {
 	private static JFrame principalProdutos = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Óculos");
@@ -48,10 +44,6 @@ public class OculosMenu implements ActionListener {
 		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
-	}
-
-	public static void main(String[] args) {
-		OculosMenu produto = new OculosMenu();
 	}
 
 	@Override

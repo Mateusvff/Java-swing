@@ -19,10 +19,7 @@ public class ControleFornecedor {
 	}
 
 	// BUSCAR FORNECEDOR
-	public String buscarFornecedor() {
-
-		System.out.print("Digite o cnpj do fornecedor (somente números) à ser verificado: ");
-		String cnpjBusca = sc.next();
+	public String buscarFornecedor(String cnpjBusca) {
 
 		for (int i = 0; i < fornecedores.size(); i++) {
 			if (fornecedores.get(i).getCnpj().equals(cnpjBusca)) {

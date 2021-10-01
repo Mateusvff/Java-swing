@@ -2,6 +2,7 @@ package view.cliente;
 
 import java.text.ParseException;
 
+import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,9 +39,13 @@ public class TelaAlteraCliente {
 		instrucao.setBounds(20, 10, 80, 25);
 		panel.add(instrucao);
 
-		JFormattedTextField cpfDelete = new JFormattedTextField(mascaraCpf);
-		cpfDelete.setBounds(110, 10, 100, 25);
-		panel.add(cpfDelete);
+		JFormattedTextField cpfAltera = new JFormattedTextField(mascaraCpf);
+		cpfAltera.setBounds(110, 10, 100, 25);
+		panel.add(cpfAltera);
+		
+		JButton registerButton = new JButton("Alterar");
+		registerButton.setBounds(250, 10, 100, 25);
+		panel.add(registerButton);
 
 	}
 }

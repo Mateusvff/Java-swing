@@ -7,13 +7,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 public class VendedorMenu implements ActionListener {
-	private static JFrame principalCliente = new JFrame("Loja de Óculos");
-	private static JLabel titulo = new JLabel("Vendedores");
-	private static JButton visualizar = new JButton("Visualizar");
-	private static JButton cadastrar = new JButton("Cadastrar");
-	private static JButton alterar = new JButton("Alterar");
-	private static JButton deletar = new JButton("Deletar");
-	private static JButton buscar = new JButton("Buscar");
+	private JFrame principalCliente = new JFrame("Loja de Óculos");
+	private JLabel titulo = new JLabel("Vendedores");
+	private JButton visualizar = new JButton("Visualizar");
+	private JButton cadastrar = new JButton("Cadastrar");
+	private JButton alterar = new JButton("Alterar");
+	private JButton deletar = new JButton("Deletar");
+	private JButton buscar = new JButton("Buscar");
 	
 	public VendedorMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -50,7 +50,6 @@ public class VendedorMenu implements ActionListener {
 
 		if (src == visualizar) {
 			new TelaVisualizaVendedor();
-			
 		}
 
 		if (src == cadastrar) {
@@ -68,7 +67,6 @@ public class VendedorMenu implements ActionListener {
 		
 		if (src == buscar) {
 			new TelaBuscaVendedor();
-			
 		}
 	}
 }

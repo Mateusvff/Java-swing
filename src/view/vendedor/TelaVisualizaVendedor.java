@@ -1,10 +1,16 @@
 package view.vendedor;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 
+import controle.ControleVendedor;
+import modelo.pessoas.Vendedor;
+
 public class TelaVisualizaVendedor {
-	private static JFrame frame = new JFrame("Loja de Óculos");
+	private JFrame frame = new JFrame("Loja de Óculos");
+	private DefaultListModel<String> listaVendedor = new DefaultListModel<>();
 
 	public TelaVisualizaVendedor() {
 		frame.setSize(400, 280);
@@ -16,9 +22,20 @@ public class TelaVisualizaVendedor {
 		frame.setVisible(true);
 	}
 
-	private void placeComponents(JPanel panel) {
-		panel.setLayout(null);
-
+	private void placeComponents(JPanel panel) {		
+		for(int i = 0; i < ControleVendedor.vendedores.size(); i++) {
+			Vendedor vendedor = ControleVendedor.vendedores.get(i);
+			listaVendedor.addElement("Nome: " + vendedor.getNome() + "\n" +
+									 "Telefone: " + vendedor.getTelefone() + "\n" +
+									 "CPF: " + vendedor.getCpf() + "\n" +
+									 "Email: " + vendedor.getEmail() + "\n" +
+									 "Salário: " + vendedor.getSalario());
+		}
+		
+		JList<String> jList = new JList<>(listaVendedor);
+		jList.setBounds(0,0,400,280);
+		
+		panel.add(jList);
 	}
 
 }

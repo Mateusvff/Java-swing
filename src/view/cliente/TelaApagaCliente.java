@@ -6,12 +6,10 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
-import view.Principal;
 
 public class TelaApagaCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -44,11 +42,15 @@ public class TelaApagaCliente {
 		instrucao.setBounds(20, 10, 80, 25);
 		panel.add(instrucao);
 
-		JFormattedTextField cpfDelete = new JFormattedTextField(mascaraCpf);
-		cpfDelete.setBounds(110, 10, 100, 25);
-		panel.add(cpfDelete);
+		JFormattedTextField cpfApaga = new JFormattedTextField(mascaraCpf);
+		cpfApaga.setBounds(110, 10, 100, 25);
+		panel.add(cpfApaga);
 		
 		ControleCliente controleCliente = new ControleCliente();
-		controleCliente.deletarClientes(cpfDelete);
+		controleCliente.deletarClientes(cpfApaga);
+		
+		JButton registerButton = new JButton("Apagar");
+		registerButton.setBounds(250, 10, 100, 25);
+		panel.add(registerButton);
 	}
 }

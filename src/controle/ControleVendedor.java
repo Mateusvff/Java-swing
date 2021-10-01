@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import modelo.pessoas.Cliente;
 import modelo.pessoas.Vendedor;
 
 public class ControleVendedor {
@@ -19,10 +18,7 @@ public class ControleVendedor {
 	}
 
 	// BUSCAR VENDEDOR
-	public String buscarVendedor() {
-
-		System.out.print("Digite o CPF do vendedor (somente números) à ser verificado: ");
-		String cpf = sc.next();
+	public String buscarVendedorString(String cpf) {
 
 		for (int i = 0; i < vendedores.size(); i++) {
 			if (vendedores.get(i).getCpf().equals(cpf)) {
@@ -30,6 +26,15 @@ public class ControleVendedor {
 			}
 		}
 		return "Vendedor não encontrado ! ";
+	}
+	
+	public Vendedor buscarVendedor(String cpf) {
+		for (int i = 0; i < vendedores.size(); i++) {
+			if (vendedores.get(i).getCpf().equals(cpf)) {
+				return vendedores.get(i);
+			}
+		}
+		return null;
 	}
 
 	// VISUALIZAR VENDEDOR
@@ -40,66 +45,20 @@ public class ControleVendedor {
 	}
 
 	// ATUALIZAR VENDEDOR
-	public void atualizarVendedor() {
-
-		System.out.print("Digite o CPF do vendedor que deseja alterar as informações: ");
-		String cpf = sc.next();
-
-		System.out.println("SELECIONE A OPÇÃO DESEJADA: ");
-		System.out.println("1) ALTERAR NOME");
-		System.out.println("2) ALTERAR EMAIL");
-		System.out.println("3) ALTERAR SALÁRIO");
-
-		int opcao = sc.nextInt();
-		sc.nextLine();
-
-		switch (opcao) {
-		case 1:
-			System.out.print("Digite o nome para o qual deseja alterar: ");
-			String nome = sc.nextLine();
-
-			for (int i = 0; i < vendedores.size(); i++) {
-				if (vendedores.get(i).getCpf().equals(cpf)) {
-					vendedores.get(i).setNome(nome);
-				}
+	public void atualizarVendedor(Vendedor vendedorAtual, String nome, String telefone, String cpf, String email, double salario) {
+		for (int i = 0; i < vendedores.size(); i++) {
+			if (vendedores.get(i).getCpf().equals(vendedorAtual.getCpf())) {
+				vendedores.get(i).setNome(nome);
+				vendedores.get(i).setEmail(email);
+				vendedores.get(i).setCpf(cpf);
+				vendedores.get(i).setSalario(salario);
+				vendedores.get(i).setTelefone(telefone);
 			}
-
-			break;
-
-		case 2:
-			System.out.print("Digite o email para o qual deseja alterar: ");
-			String email = sc.nextLine();
-
-			for (int i = 0; i < vendedores.size(); i++) {
-				if (vendedores.get(i).getCpf().equals(cpf)) {
-					vendedores.get(i).setEmail(email);
-				}
-			}
-
-			break;
-
-		case 3:
-			System.out.print("Digite o salário para o qual deseja alterar: ");
-			double salario = sc.nextDouble();
-
-			for (int i = 0; i < vendedores.size(); i++) {
-				if (vendedores.get(i).getCpf().equals(cpf)) {
-					vendedores.get(i).setSalario(salario);
-				}
-			}
-
-			break;
-
-		default:
-			System.out.println("Seleção Inválida");
 		}
 	}
 
 	// DELETAR VENDEDOR
-	public void deletarVendedor() {
-		System.out.println("Digite o CPF do fornecedor (somente números) à ser apagado: ");
-		String cpf = sc.next();
-
+	public void deletarVendedor(String cpf) {
 		for (int i = 0; i < vendedores.size(); i++) {
 			if (vendedores.get(i).getCpf().equals(cpf)) {
 				vendedores.remove(i);

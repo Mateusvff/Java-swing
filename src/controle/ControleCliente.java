@@ -39,23 +39,8 @@ public class ControleCliente {
 	// ATUALIZAR CLIENTES
 	public void atualizarClientes() {
 
-		System.out.print("Digite o cpf do cliente que deseja alterar as informações: ");
-		String cpf = sc.next();
-
-		System.out.println("SELECIONE A OPÇÃO DESEJADA: ");
-		System.out.println("1) ALTERAR NOME");
-		System.out.println("2) ALTERAR TELEFONE");
-		System.out.println("3) ALTERAR ENDEREÇO");
-		System.out.println("4) ALTERAR EMAIL");
-
-		int opcao = sc.nextInt();
-		sc.nextLine();
-
 		switch (opcao) {
 		case 1:
-			System.out.print("Digite o nome para o qual deseja alterar: ");
-			String nome = sc.nextLine();
-
 			for (int i = 0; i < clientes.size(); i++) {
 				if (clientes.get(i).getCpf().equals(cpf)) {
 					clientes.get(i).setNome(nome);
@@ -64,9 +49,6 @@ public class ControleCliente {
 			break;
 
 		case 2:
-			System.out.print("Digite o telefone para o qual deseja alterar: ");
-			String telefone = sc.nextLine();
-
 			for (int i = 0; i < clientes.size(); i++) {
 				if (clientes.get(i).getCpf().equals(cpf)) {
 					clientes.get(i).setTelefone(telefone);
@@ -75,20 +57,14 @@ public class ControleCliente {
 			break;
 
 		case 3:
-			System.out.print("Digite o endereço para o qual deseja alterar: ");
-			String endereco = sc.nextLine();
-
 			for (int i = 0; i < clientes.size(); i++) {
 				if (clientes.get(i).getCpf().equals(cpf)) {
-					clientes.get(i).setEndereco(endereco);
+					clientes.get(i).setCidade(cidade);
 				}
 			}
 			break;
 
 		case 4:
-			System.out.print("Digite o email para o qual deseja alterar: ");
-			String email = sc.nextLine();
-
 			for (int i = 0; i < clientes.size(); i++) {
 				if (clientes.get(i).getCpf().equals(cpf)) {
 					clientes.get(i).setEmail(email);

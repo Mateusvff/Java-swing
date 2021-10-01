@@ -23,11 +23,8 @@ public class ControleOculos {
 	// BUSCAR OCULOS
 	public String buscarOds() {
 
-		System.out.print("Digite o código do Óculos de sol (somente números) à ser verificado: ");
-		String codigoBusca = sc.next();
-
 		for (int i = 0; i < oculosProd.size(); i++) {
-			if (oculosProd.get(i).getCodigo().equals(codigoBusca)) {
+			if (oculosProd.get(i).getId().equals(codigoBusca)) {
 				return oculosProd.get(i).toString();
 			}
 		}
