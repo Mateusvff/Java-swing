@@ -25,11 +25,7 @@ public class TelaVisualizaVendedor {
 	private void placeComponents(JPanel panel) {		
 		for(int i = 0; i < ControleVendedor.vendedores.size(); i++) {
 			Vendedor vendedor = ControleVendedor.vendedores.get(i);
-			listaVendedor.addElement("Nome: " + vendedor.getNome() + "\n" +
-									 "Telefone: " + vendedor.getTelefone() + "\n" +
-									 "CPF: " + vendedor.getCpf() + "\n" +
-									 "Email: " + vendedor.getEmail() + "\n" +
-									 "Salário: " + vendedor.getSalario());
+			listaVendedor.addElement("Nome: " + vendedor.getNome() + " - " + "CPF:" + vendedor.getCpf());
 		}
 		
 		JList<String> jList = new JList<>(listaVendedor);

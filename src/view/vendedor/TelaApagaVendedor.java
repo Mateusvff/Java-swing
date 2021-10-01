@@ -8,10 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleVendedor;
+import view.Principal;
 
 public class TelaApagaVendedor {
 	private JFrame frame = new JFrame("Loja de Óculos");
@@ -57,6 +59,12 @@ public class TelaApagaVendedor {
 			public void actionPerformed(ActionEvent e) {
 				ControleVendedor controleVendedor = new ControleVendedor();
 				controleVendedor.deletarVendedor(cpfApaga.getText());
+				
+				JOptionPane.showMessageDialog(null, "Vendedor excluído");
+
+				new Principal();
+
+				frame.dispose();
 			}
 		});
 	}

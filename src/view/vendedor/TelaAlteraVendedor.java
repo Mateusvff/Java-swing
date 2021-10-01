@@ -114,13 +114,6 @@ public class TelaAlteraVendedor implements ActionListener {
 		return panel;
 	}
 
-	public static void main(String[] args) {
-		ControleVendedor controle = new ControleVendedor();
-		controle.cadastroVendedor("Breno", "(61) 98616-9666", "041.862.071-78", "brenohff@gmail.com", 10);
-
-		TelaAlteraVendedor telaVendedor = new TelaAlteraVendedor();
-	}
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();

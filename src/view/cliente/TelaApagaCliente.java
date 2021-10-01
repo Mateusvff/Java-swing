@@ -1,15 +1,19 @@
 package view.cliente;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
+import view.Principal;
 
 public class TelaApagaCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -52,5 +56,22 @@ public class TelaApagaCliente {
 		JButton registerButton = new JButton("Apagar");
 		registerButton.setBounds(250, 10, 100, 25);
 		panel.add(registerButton);
+		
+		registerButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ControleCliente controleCliente = new ControleCliente();
+				controleCliente.deletarClientes(cpfApaga);
+				
+				JOptionPane.showMessageDialog(null, "Cliente excluído");
+
+				new Principal();
+
+				frame.dispose();
+			}
+		});
+		
+		
 	}
 }

@@ -3,10 +3,7 @@ package controle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import modelo.pessoas.Vendedor;
 import modelo.produtos.Oculos;
-import modelo.produtos.OculosDeSol;
 
 public class ControleOculos {
 
@@ -21,10 +18,10 @@ public class ControleOculos {
 	}
 
 	// BUSCAR OCULOS
-	public String buscarOds() {
+	public String buscarOds(String codigoBusca) {
 
 		for (int i = 0; i < oculosProd.size(); i++) {
-			if (oculosProd.get(i).getId().equals(codigoBusca)) {
+			if (oculosProd.get(i).getMarca().equals(codigoBusca)) {
 				return oculosProd.get(i).toString();
 			}
 		}
@@ -38,95 +35,10 @@ public class ControleOculos {
 		}
 	}
 
-	// ATUALIZAR OCULOS
-	public void atualizarOds() {
-
-		System.out.print("Digite o codigo da lente que deseja alterar as informações: ");
-		String codigo = sc.next();
-
-		System.out.println("SELECIONE A OPÇÃO DESEJADA: ");
-		System.out.println("1) ALTERAR MARCA");
-		System.out.println("2) ALTERAR MODELO");
-		System.out.println("3) ALTERAR MATERIAL");
-		System.out.println("4) ALTERAR COR");
-		System.out.println("5) ALTERAR GENERO");
-
-		int opcao = sc.nextInt();
-		sc.nextLine();
-
-		switch (opcao) {
-		case 1:
-			System.out.print("Digite a marca para o qual deseja alterar: ");
-			String marca = sc.nextLine();
-
-			for (int i = 0; i < oculosProd.size(); i++) {
-				if (oculosProd.get(i).getCodigo().equals(codigo)) {
-					oculosProd.get(i).setMarca(marca);
-				}
-			}
-
-			break;
-
-		case 2:
-			System.out.print("Digite o modelo para o qual deseja alterar: ");
-			String modelo = sc.nextLine();
-
-			for (int i = 0; i < oculosProd.size(); i++) {
-				if (oculosProd.get(i).getCodigo().equals(codigo)) {
-					oculosProd.get(i).setModelo(modelo);
-				}
-			}
-
-			break;
-
-		case 3:
-			System.out.print("Digite o material para o qual deseja alterar: ");
-			String material = sc.nextLine();
-
-			for (int i = 0; i < oculosProd.size(); i++) {
-				if (oculosProd.get(i).getCodigo().equals(codigo)) {
-					oculosProd.get(i).setMaterial(material);
-				}
-			}
-
-			break;
-
-		case 4:
-			System.out.print("Digite a cor para o qual deseja alterar: ");
-			String cor = sc.nextLine();
-
-			for (int i = 0; i < oculosProd.size(); i++) {
-				if (oculosProd.get(i).getCodigo().equals(codigo)) {
-					oculosProd.get(i).setCor(cor);
-				}
-			}
-
-			break;
-
-		case 5:
-			System.out.print("Digite o gênero para o qual deseja alterar: ");
-			String genero = sc.nextLine();
-
-			for (int i = 0; i < oculosProd.size(); i++) {
-				if (oculosProd.get(i).getCodigo().equals(codigo)) {
-					oculosProd.get(i).setGenero(genero);
-				}
-			}
-
-			break;
-
-		default:
-			System.out.println("Seleção Inválida");
-		}
-	}
-
 	// DELETAR OCULOS
-	public void deletarOds() {
-		System.out.println("Digite o código do Óculos de sol (somente números) à ser apagado: ");
-		String codigo = sc.next();
-
+	public void deletarOds(String codigoBusca) {
 		for (int i = 0; i < oculosProd.size(); i++) {
-			if (oculosProd.get(i).getCodigo().equals(codigo)) {
+			if (oculosProd.get(i).getMarca().equals(codigoBusca)) {
 				oculosProd.remove(i);
 			}
 		}

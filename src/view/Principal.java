@@ -17,8 +17,6 @@ public class Principal implements ActionListener {
 	private static JButton produtos = new JButton("Produtos");
 	private static JButton pessoas = new JButton("Pessoas");
 	private static JButton vendas = new JButton("Vendas");
-
-	// Construtor da tela de menu inicial que mostra as opções para o usuário
 	
 	public Principal() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -40,8 +38,6 @@ public class Principal implements ActionListener {
 
 	public static void main(String[] args) {
 		
-		//Chama o construtor TelaMenu()
-		
 		Principal menu = new Principal(); 
 		
 		produtos.addActionListener(menu);
@@ -49,21 +45,19 @@ public class Principal implements ActionListener {
 		vendas.addActionListener(menu);
 	}
 	
-	// Método que irá implementar a funcionalidade de pressionar o botão
-	
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
 		if (src == produtos) {
-			OculosMenu telaProduto = new OculosMenu();
+			new OculosMenu();
 		}
 		
 		if (src == pessoas) {
-			TelaPessoaMenu telaPessoas = new TelaPessoaMenu();
+			new TelaPessoaMenu();
 		}
 		
 		if (src == vendas) {
-			VendaMenu telaVendas = new VendaMenu();
+			new VendaMenu();
 		}
 
 	}

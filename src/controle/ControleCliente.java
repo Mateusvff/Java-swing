@@ -2,7 +2,6 @@ package controle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.swing.JFormattedTextField;
 
@@ -34,48 +33,6 @@ public class ControleCliente {
 		for (int i = 0; i < clientes.size(); i++) {
 			System.out.println(clientes.get(i).toString() + "\n");
 		}
-	}
-
-	// ATUALIZAR CLIENTES
-	public void atualizarClientes() {
-
-		switch (opcao) {
-		case 1:
-			for (int i = 0; i < clientes.size(); i++) {
-				if (clientes.get(i).getCpf().equals(cpf)) {
-					clientes.get(i).setNome(nome);
-				}
-			}
-			break;
-
-		case 2:
-			for (int i = 0; i < clientes.size(); i++) {
-				if (clientes.get(i).getCpf().equals(cpf)) {
-					clientes.get(i).setTelefone(telefone);
-				}
-			}
-			break;
-
-		case 3:
-			for (int i = 0; i < clientes.size(); i++) {
-				if (clientes.get(i).getCpf().equals(cpf)) {
-					clientes.get(i).setCidade(cidade);
-				}
-			}
-			break;
-
-		case 4:
-			for (int i = 0; i < clientes.size(); i++) {
-				if (clientes.get(i).getCpf().equals(cpf)) {
-					clientes.get(i).setEmail(email);
-				}
-			}
-			break;
-
-		default:
-			System.out.println("Seleção Inválida");
-		}
-
 	}
 
 	// DELETAR CLIENTES

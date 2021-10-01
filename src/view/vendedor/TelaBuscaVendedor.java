@@ -71,18 +71,11 @@ public class TelaBuscaVendedor {
 				Vendedor retorno = controleVendedor.buscarVendedor(cpf);
 				
 				listModel.addElement(retorno.getNome() + " - " + retorno.getCpf());
-				
-//				new Principal();
-//
-//				frame.dispose();
+			
 			}
 
 		});
 
-	}
-	
-	public static void main(String[] args) {
-		TelaBuscaVendedor buscarVendedor = new TelaBuscaVendedor();
 	}
 
 }

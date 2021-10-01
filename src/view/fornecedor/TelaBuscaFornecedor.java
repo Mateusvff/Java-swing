@@ -60,6 +60,8 @@ public class TelaBuscaFornecedor {
 
 				ControleFornecedor controleFornecedor = new ControleFornecedor();
 				String retorno = controleFornecedor.buscarFornecedor(cnpj);
+				
+				System.out.println(retorno);
 
 				new Principal();
 

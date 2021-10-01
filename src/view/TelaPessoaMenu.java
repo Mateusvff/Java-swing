@@ -17,8 +17,6 @@ public class TelaPessoaMenu implements ActionListener {
 	private static JButton cliente = new JButton("Clientes");
 	private static JButton fornecedor = new JButton("Fornecedores");
 
-	// Construtor de tela das opções de funcionários e clientes
-
 	public TelaPessoaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(147, 10, 150, 30);
