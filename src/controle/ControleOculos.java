@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import modelo.produtos.OculosDeSol;
 
-public class ControleOds {
+public class ControleOculos {
 
 	public static List<OculosDeSol> ods = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);

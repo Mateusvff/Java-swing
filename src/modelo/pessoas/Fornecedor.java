@@ -1,30 +1,29 @@
 package modelo.pessoas;
 
 public class Fornecedor {
-	
+
 	private String nome;
 	private String cnpj;
 	private String telefone;
-	private String endereco;
+	private String cidade;
 	private String email;
-	
-	
-	public Fornecedor(String nome, String cnpj, String telefone, String endereco, String email) {
+
+	public Fornecedor(String nome, String cnpj, String telefone, String cidade, String email) {
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.telefone = telefone;
-		this.endereco = endereco;
+		this.cidade = cidade;
 		this.email = email;
 	}
 	
 	@Override
 	public String toString() {
 		return "Dados do fornecedor " + "\n" +
-				"nome: " + nome + "\n" +
-				"cnpj: " + cnpj + "\n" + 
-				"telefone" + telefone + "\n" +
-				"endereco" + endereco + "\n" +
-				"email: " + email + "\n";
+				"Nome: " + nome + "\n" +
+				"CNPJ: " + cnpj + "\n" + 
+				"Telefone" + telefone + "\n" +
+				"Cidade" + cidade + "\n" +
+				"Email: " + email + "\n";
 	}
 
 	public String getNome() {
@@ -51,12 +50,12 @@ public class Fornecedor {
 		this.telefone = telefone;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public String getCidade() {
+		return cidade;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	public String getEmail() {
@@ -66,4 +65,5 @@ public class Fornecedor {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 }

@@ -12,7 +12,7 @@ public class ControleVenda {
 	Scanner sc = new Scanner(System.in);
 
 	ControleCliente controleCliente = new ControleCliente();
-	ControleOds controleOds = new ControleOds();
+	ControleOculos controleOds = new ControleOculos();
 	ControleArmacao controleArmacoes = new ControleArmacao();
 	ControleLente controleLentes = new ControleLente();
 	
@@ -44,13 +44,13 @@ public class ControleVenda {
 			System.out.println("Digite o código do produto que será cadastrado a venda: ");
 			String codigoProd = sc.nextLine();
 
-			for (int i = 0; i < ControleOds.ods.size(); i++) {
-				if (ControleOds.ods.get(i).getCodigo().equals(codigoProd)) {
-					String marcaOds = ControleOds.ods.get(i).getMarca();
-					String modeloOds = ControleOds.ods.get(i).getModelo();
-					String materialOds = ControleOds.ods.get(i).getMaterial();
-					String corOds = ControleOds.ods.get(i).getCor();
-					String generoOds = ControleOds.ods.get(i).getGenero();
+			for (int i = 0; i < ControleOculos.ods.size(); i++) {
+				if (ControleOculos.ods.get(i).getCodigo().equals(codigoProd)) {
+					String marcaOds = ControleOculos.ods.get(i).getMarca();
+					String modeloOds = ControleOculos.ods.get(i).getModelo();
+					String materialOds = ControleOculos.ods.get(i).getMaterial();
+					String corOds = ControleOculos.ods.get(i).getCor();
+					String generoOds = ControleOculos.ods.get(i).getGenero();
 				}
 			}
 			break;

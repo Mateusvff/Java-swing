@@ -2,16 +2,11 @@ package modelo.pessoas;
 
 public class Cliente extends Pessoa {
 	private int quantComprada;
-	
-	public Cliente(String nome, String cpf, String email, int quantComprada) {
-		super(nome, cpf, email);
+
+	public Cliente(String nome, String telefone, String cidade, String cpf, String email) {
+		super(nome, telefone, cidade, cpf, email);
 		this.quantComprada = quantComprada;
 	}
-	
-	public Cliente(String nome, String telefone, String endereco, String cpf, String email) {
-		super(nome, telefone, endereco, cpf, email);
-	}
-	
 	
 	@Override
 	public String toString() {
@@ -20,7 +15,7 @@ public class Cliente extends Pessoa {
 				"CPF: " + cpf + "\n" +
 				"Email: " + email + "\n" +
 				"Telefone: " + telefone + "\n" + 
-				"Endereço: " + endereco;
+				"Cidade: " + cidade;
 	}
 
 	public int getQuantComprada() {
@@ -30,5 +25,5 @@ public class Cliente extends Pessoa {
 	public void setQuantComprada(int quantComprada) {
 		this.quantComprada = quantComprada;
 	}
-	
+
 }
