@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import view.cliente.TelaClienteMenu;
+import view.fornecedor.TelaFornecedorMenu;
+import view.vendedor.TelaVendedorMenu;
+
 
 public class TelaPessoa implements ActionListener {
 	private static JFrame principalPessoa = new JFrame("Loja de Óculos");
@@ -32,21 +36,25 @@ public class TelaPessoa implements ActionListener {
 
 		principalPessoa.setSize(400, 300);
 		principalPessoa.setVisible(true);
+		
+		funcionario.addActionListener(this);
+		cliente.addActionListener(this);
+		fornecedor.addActionListener(this);
 	}
 	
-	public static void main(String[] args) {
-		TelaPessoa menu = new TelaPessoa();
-		
-		funcionario.addActionListener(menu);
-		cliente.addActionListener(menu);
-		fornecedor.addActionListener(menu);
-	}
+//	public static void main(String[] args) {
+//		TelaPessoa menu = new TelaPessoa();
+//		
+//		funcionario.addActionListener(menu);
+//		cliente.addActionListener(menu);
+//		fornecedor.addActionListener(menu);
+//	}
 	
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
 		if(src == funcionario) {
-			new TelaFuncionarioMenu();
+			new TelaVendedorMenu();
 		}
 		
 		if(src == cliente) {

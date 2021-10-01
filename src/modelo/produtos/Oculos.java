@@ -7,17 +7,17 @@ public class Oculos {
 	protected String material;
 	protected String cor;
 	protected int quantEstoque;
-	protected double precoVenda;
+	protected double preco;
 	protected String genero;
 	
-	public Oculos(String marca, String modelo, int id, String material, String cor, int quantEstoque, double precoVenda, String genero) {
+	public Oculos(String marca, String modelo, int id, String material, String cor, int quantEstoque, double preco, String genero) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.id = id;
 		this.material = material;
 		this.cor = cor;
 		this.quantEstoque = quantEstoque;
-		this.precoVenda = precoVenda;
+		this.preco = preco;
 		this.genero = genero;
 	}
 
@@ -69,12 +69,12 @@ public class Oculos {
 		this.quantEstoque = quantEstoque;
 	}
 
-	public double getPrecoVenda() {
-		return precoVenda;
+	public double getPreco() {
+		return preco;
 	}
 
-	public void setPrecoVenda(double precoVenda) {
-		this.precoVenda = precoVenda;
+	public void setPreco(double preco) {
+		this.preco = preco;
 	}
 
 	public String getGenero() {

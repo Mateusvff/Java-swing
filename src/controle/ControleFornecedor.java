@@ -3,6 +3,8 @@ package controle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import modelo.pessoas.Cliente;
 import modelo.pessoas.Fornecedor;
 
 public class ControleFornecedor {
@@ -11,24 +13,8 @@ public class ControleFornecedor {
 	Scanner sc = new Scanner(System.in);
 
 	// CADASTRAR FORNECEDOR
-	public void cadastroFornecedor() {
-
-		System.out.print("Digite o nome do fornecedor: ");
-		String nome = sc.nextLine();
-
-		System.out.print("Digite o cnpj do fornecedor: ");
-		String cnpj = sc.next();
-
-		System.out.print("Digite o telefone do cliente: ");
-		String telefone = sc.nextLine();
-
-		System.out.print("Digite o endereco do cliente: ");
-		String endereco = sc.nextLine();
-
-		System.out.print("Digite o email do cliente: ");
-		String email = sc.nextLine();
-
-		Fornecedor fornecedor = new Fornecedor(nome, cnpj, telefone, endereco, email);
+	public void cadastroFornecedor(String nome, String cnpj, String telefone, String cidade, String email) {
+		Fornecedor fornecedor = new Fornecedor(nome, cnpj, telefone, cidade, email);
 		fornecedores.add(fornecedor);
 	}
 

@@ -1,10 +1,18 @@
-package view;
+package view.fornecedor;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import controle.ControleFornecedor;
+import controle.ControleVendedor;
+import view.TelaMenu;
 
 public class TelaCadastroFornecedor {
 
@@ -66,5 +74,24 @@ public class TelaCadastroFornecedor {
 		JButton registerButton = new JButton("Cadastrar");
 		registerButton.setBounds(140, 180, 100, 25);
 		panel.add(registerButton);
+		
+		registerButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String nome = nomeText.getText();
+				String cnpj = cnpjText.getText();
+				String telefone = telefoneText.getText();
+				String endereco = enderecoText.getText();
+				String email = emailText.getText();
+				
+				ControleFornecedor controleFornecedor = new ControleFornecedor();
+				controleFornecedor.cadastroFornecedor(nome, cnpj, telefone, endereco, email);
+				
+				JOptionPane.showMessageDialog(null, "Cadastro realizado");
+				
+				new TelaMenu();
+			}
+		});
 	}
 }

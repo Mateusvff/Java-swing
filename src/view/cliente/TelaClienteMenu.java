@@ -1,10 +1,15 @@
-package view;
+package view.cliente;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class TelaClienteMenu {
+import view.fornecedor.TelaFornecedorMenu;
+import view.vendedor.TelaVendedorMenu;
+
+public class TelaClienteMenu implements ActionListener {
 	private static JFrame principalCliente = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Clientes");
 	private static JButton visualizar = new JButton("Visualizar");
@@ -34,6 +39,37 @@ public class TelaClienteMenu {
 
 		principalCliente.setSize(400, 350);
 		principalCliente.setVisible(true);
+		
+		visualizar.addActionListener(this);
+		cadastrar.addActionListener(this);
+		alterar.addActionListener(this);
+		deletar.addActionListener(this);
+		buscar.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+
+		if (src == visualizar) {
+			new TelaVendedorMenu();
+		}
+
+		if (src == cadastrar) {
+			new TelaCadastroCliente();
+		}
+
+		if (src == alterar) {
+			new TelaFornecedorMenu();
+		}
+		
+		if (src == deletar) {
+			new TelaFornecedorMenu();
+		}
+		
+		if (src == buscar) {
+			new TelaFornecedorMenu();
+		}
 	}
 	
 }

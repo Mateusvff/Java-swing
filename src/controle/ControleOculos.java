@@ -4,38 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import modelo.pessoas.Vendedor;
+import modelo.produtos.Oculos;
 import modelo.produtos.OculosDeSol;
 
 public class ControleOculos {
 
-	public static List<OculosDeSol> ods = new ArrayList<>();
+	public static List<Oculos> oculosProd = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 	
-	// CADASTRAR ODS
-		public void cadastroOds() {
+	// CADASTRAR OCULOS
+	public void cadastroOculos(int id, String marca, String modelo, String material, String cor, int quantEstoque, double preco, String genero ) {
+		Oculos oculos = new Oculos(marca, modelo, id, material, cor, quantEstoque, preco, genero);
+		oculosProd.add(oculos);
+	}
 
-			System.out.print("Digite a marca da lente: ");
-			String marca = sc.nextLine();
-
-			System.out.print("Digite o modelo da lente: ");
-			String modelo = sc.next();
-
-			System.out.print("Digite o código da lente: ");
-			String codigo = sc.nextLine();
-
-			System.out.print("Digite o material da lente: ");
-			String material = sc.nextLine();
-
-			System.out.print("Digite a cor da lente: ");
-			String cor = sc.nextLine();
-
-			System.out.print("Digite o gênero da lente: ");
-			String genero = sc.nextLine();
-
-			OculosDeSol OculosDeSol = new OculosDeSol(marca, modelo, codigo, material, cor, genero);
-			ods.add(OculosDeSol);
-
-		}
 
 		// BUSCAR ODS
 		public String buscarOds() {

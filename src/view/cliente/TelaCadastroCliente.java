@@ -1,4 +1,4 @@
-package view;
+package view.cliente;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controle.ControleCliente;
+import view.TelaMenu;
 
 public class TelaCadastroCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");

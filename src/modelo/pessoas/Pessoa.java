@@ -7,10 +7,9 @@ public abstract class Pessoa {
 	protected String cpf;
 	protected String email;
 	
-	public Pessoa(String nome, String telefone, String cidade, String cpf, String email) {
+	public Pessoa(String nome, String telefone, String cpf, String email) {
 		this.nome = nome;
 		this.telefone = telefone;
-		this.cidade = cidade;
 		this.cpf = cpf;
 		this.email = email;
 	}

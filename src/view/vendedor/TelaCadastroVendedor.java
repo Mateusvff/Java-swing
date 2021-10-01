@@ -1,4 +1,4 @@
-package view;
+package view.vendedor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,9 +10,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import controle.ControleCliente;
+import controle.ControleVendedor;
+import view.TelaMenu;
 
-public class TelaCadastroFuncionario {
+public class TelaCadastroVendedor {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Loja de Óculos");
@@ -78,17 +79,17 @@ public class TelaCadastroFuncionario {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String nome = nomeText.getText();
+				String telefone = telefoneText.getText();
 				String cpf = cpfText.getText();
 				String email = emailText.getText();
+				double salario = Double.parseDouble(salarioText.getText());
 				
-				ControleCliente controleCliente = new ControleCliente();
-				controleCliente.cadastroClientes(nome, telefone, cpf, email, salario);
+				ControleVendedor controleVendedor = new ControleVendedor();
+				controleVendedor.cadastroVendedor(nome, telefone, cpf, email, salario);
 				
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
 				
 				new TelaMenu();
-				
-				frame.dispose();
 			}
 		});
 	}

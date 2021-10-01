@@ -1,4 +1,4 @@
-package view;
+package view.oculos;
 
 import java.awt.Font;
 

@@ -3,6 +3,8 @@ package controle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import modelo.pessoas.Cliente;
 import modelo.pessoas.Vendedor;
 
 public class ControleVendedor {
@@ -11,21 +13,8 @@ public class ControleVendedor {
 	Scanner sc = new Scanner(System.in);
 
 	// CADASTRAR VENDEDOR
-	public void cadastroVendedor() {
-
-		System.out.print("Digite o nome do vendedor: ");
-		String nome = sc.nextLine();
-
-		System.out.print("Digite o CPF do vendedor: ");
-		String cpf = sc.next();
-
-		System.out.print("Digite o email do vendedor: ");
-		String email = sc.nextLine();
-
-		System.out.print("Digite o salário do vendedor: ");
-		double salario = sc.nextDouble();
-
-		Vendedor vendedor = new Vendedor(nome, cpf, email, salario);
+	public void cadastroVendedor(String nome, String telefone, String cpf, String email, double salario) {
+		Vendedor vendedor = new Vendedor(nome, telefone, cpf, email, salario);
 		vendedores.add(vendedor);
 	}
 

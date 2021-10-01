@@ -1,4 +1,4 @@
-package view;
+package view.vendedor;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
-public class TelaFuncionarioMenu {
+public class TelaVendedorMenu {
 	private static JFrame principalFuncionario = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Funcionários");
 	private static JButton visualizar = new JButton("Visualizar");
@@ -15,7 +15,7 @@ public class TelaFuncionarioMenu {
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 	
-	public TelaFuncionarioMenu() {
+	public TelaVendedorMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(130, 10, 150, 30);
 		
