@@ -46,30 +46,30 @@ public class TelaCadastroCliente {
 		JTextField nomeText = new JTextField(20);
 		nomeText.setBounds(140, 10, 160, 25);
 		panel.add(nomeText);
-
-		JLabel idadeLabel = new JLabel("Idade");
-		idadeLabel.setBounds(70, 40, 80, 25);
-		panel.add(idadeLabel);
-		
-		JTextField idadeText = new JTextField(20);
-		idadeText.setBounds(140, 40, 160, 25);
-		panel.add(idadeText);
 		
 		JLabel telefoneLabel = new JLabel("Telefone");
-		telefoneLabel.setBounds(70, 70, 80, 25);
+		telefoneLabel.setBounds(70, 40, 80, 25);
 		panel.add(telefoneLabel);
 		
 		JTextField telefoneText = new JTextField(20);
-		telefoneText.setBounds(140, 70, 160, 25);
+		telefoneText.setBounds(140, 40, 160, 25);
 		panel.add(telefoneText);
 		
-		JLabel enderecoLabel = new JLabel("Endereço");
-		enderecoLabel.setBounds(70, 100, 80, 25);
-		panel.add(enderecoLabel);
+		JLabel cidadeLabel = new JLabel("Cidade");
+		cidadeLabel.setBounds(70, 70, 80, 25);
+		panel.add(cidadeLabel);
 		
-		JTextField enderecoText = new JTextField(20);
-		enderecoText.setBounds(140, 100, 160, 25);
-		panel.add(enderecoText);
+		JTextField cidadeText = new JTextField(20);
+		cidadeText.setBounds(140, 70, 160, 25);
+		panel.add(cidadeText);
+		
+		JLabel cpfLabel = new JLabel("CPF");
+		cpfLabel.setBounds(70, 100, 80, 25);
+		panel.add(cpfLabel);
+		
+		JTextField cpfText = new JTextField(20);
+		cpfText.setBounds(140, 100, 160, 25);
+		panel.add(cpfText);
 		
 		JLabel emailLabel = new JLabel("Email");
 		emailLabel.setBounds(70, 130, 80, 25);
@@ -89,11 +89,13 @@ public class TelaCadastroCliente {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String nome = nomeText.getText();
+				String telefone = telefoneText.getText();
+				String cidade = cidadeText.getText();
+				String cpf = cpfText.getText();
 				String email = emailText.getText();
-				String endereco = enderecoText.getText();
 				
 				ControleCliente controleCliente = new ControleCliente();
-				controleCliente.cadastroClientes(nome, "", "", "", "");
+				controleCliente.cadastroClientes(nome, telefone, cidade, cpf, email);
 				
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
 				
