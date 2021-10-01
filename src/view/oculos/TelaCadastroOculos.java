@@ -10,14 +10,25 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import controle.ControleCliente;
 import controle.ControleOculos;
-import view.TelaMenu;
+import view.TelaPrincipal;
 
 public class TelaCadastroOculos {
+	private static JFrame frame = new JFrame("Loja de Óculos");
+
+	public TelaCadastroOculos() {
+		frame.setSize(400, 340);
+
+		JPanel panel = new JPanel();
+		frame.add(panel);
+		placeComponents(panel);
+
+		frame.setVisible(true);
+	}
 
 	public static void main(String[] args) {
-		JFrame frame = new JFrame("Loja de Óculos");
-		frame.setSize(400, 320);
+		frame.setSize(400, 280);
 
 		JPanel panel = new JPanel();
 		frame.add(panel);
@@ -29,15 +40,15 @@ public class TelaCadastroOculos {
 	private static void placeComponents(JPanel panel) {
 
 		panel.setLayout(null);
-		
+
 		JLabel idLabel = new JLabel("ID");
 		idLabel.setBounds(70, 10, 80, 25);
 		panel.add(idLabel);
-		
+
 		JTextField idText = new JTextField(20);
 		idText.setBounds(140, 10, 160, 25);
 		panel.add(idText);
-		
+
 		JLabel marcaLabel = new JLabel("Marca");
 		marcaLabel.setBounds(70, 40, 80, 25);
 		panel.add(marcaLabel);
@@ -49,58 +60,57 @@ public class TelaCadastroOculos {
 		JLabel modeloLabel = new JLabel("Modelo");
 		modeloLabel.setBounds(70, 70, 80, 25);
 		panel.add(modeloLabel);
-		
+
 		JTextField modeloText = new JTextField(20);
 		modeloText.setBounds(140, 70, 160, 25);
 		panel.add(modeloText);
-		
+
 		JLabel materialLabel = new JLabel("Material");
 		materialLabel.setBounds(70, 100, 80, 25);
 		panel.add(materialLabel);
-		
+
 		JTextField materialText = new JTextField(20);
 		materialText.setBounds(140, 100, 160, 25);
 		panel.add(materialText);
-		
+
 		JLabel corLabel = new JLabel("Cor");
 		corLabel.setBounds(70, 130, 80, 25);
 		panel.add(corLabel);
-		
+
 		JTextField corText = new JTextField(20);
 		corText.setBounds(140, 130, 160, 25);
 		panel.add(corText);
-		
+
 		JLabel estoqueLabel = new JLabel("Estoque");
 		estoqueLabel.setBounds(70, 160, 80, 25);
 		panel.add(estoqueLabel);
-		
+
 		JTextField estoqueText = new JTextField(20);
 		estoqueText.setBounds(140, 160, 160, 25);
 		panel.add(estoqueText);
-		
+
 		JLabel precoLabel = new JLabel("Preço");
 		precoLabel.setBounds(70, 190, 80, 25);
 		panel.add(precoLabel);
-		
+
 		JTextField precoText = new JTextField(20);
 		precoText.setBounds(140, 190, 160, 25);
 		panel.add(precoText);
-		
+
 		JLabel generoLabel = new JLabel("Gênero");
 		generoLabel.setBounds(70, 220, 80, 25);
 		panel.add(generoLabel);
-		
+
 		JTextField generoText = new JTextField(20);
 		generoText.setBounds(140, 220, 160, 25);
 		panel.add(generoText);
-		
+
 		JButton registerButton = new JButton("Cadastrar");
-		registerButton.setBounds(140, 250, 100, 25);
+		registerButton.setBounds(140, 260, 100, 25);
 		panel.add(registerButton);
-		
-		
+
 		registerButton.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				int id = Integer.parseInt(idText.getText());
@@ -111,17 +121,15 @@ public class TelaCadastroOculos {
 				int estoque = Integer.parseInt(estoqueText.getText());
 				double preco = Double.parseDouble(precoText.getText());
 				String genero = generoText.getText();
-				
+
 				ControleOculos controleOculos = new ControleOculos();
 				controleOculos.cadastroOculos(id, marca, modelo, material, cor, estoque, preco, genero);
-				
+
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
-				
-				new TelaMenu();
+
+				new TelaPrincipal();
 			}
 		});
-		
-	}
-	
 
+	}
 }

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controle.ControleCliente;
-import view.TelaMenu;
+import view.TelaPrincipal;
 
 public class TelaCadastroCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -100,7 +100,7 @@ public class TelaCadastroCliente {
 				
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
 				
-				new TelaMenu();
+				new TelaPrincipal();
 				
 				frame.dispose();
 			}

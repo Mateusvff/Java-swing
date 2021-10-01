@@ -8,7 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class TelaMenu implements ActionListener {
+import view.venda.TelaVendaMenu;
+
+public class TelaPrincipal implements ActionListener {
 	private static JFrame principal = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Menu Principal");
 	private static JButton produtos = new JButton("Produtos");
@@ -17,7 +19,7 @@ public class TelaMenu implements ActionListener {
 
 	// Construtor da tela de menu inicial que mostra as opções para o usuário
 	
-	public TelaMenu() {
+	public TelaPrincipal() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
 		produtos.setBounds(140, 50, 100, 30);
@@ -39,7 +41,7 @@ public class TelaMenu implements ActionListener {
 		
 		//Chama o construtor TelaMenu()
 		
-		TelaMenu menu = new TelaMenu(); 
+		TelaPrincipal menu = new TelaPrincipal(); 
 		
 		produtos.addActionListener(menu);
 		pessoas.addActionListener(menu);
@@ -51,12 +53,16 @@ public class TelaMenu implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
+		if (src == produtos) {
+			TelaProdutoMenu telaProduto = new TelaProdutoMenu();
+		}
+		
 		if (src == pessoas) {
-			TelaPessoa telaPessoas = new TelaPessoa();
+			TelaPessoaMenu telaPessoas = new TelaPessoaMenu();
 		}
 		
 		if (src == vendas) {
-			TelaVendas telaVendas = new TelaVendas();
+			TelaVendaMenu telaVendas = new TelaVendaMenu();
 		}
 
 	}

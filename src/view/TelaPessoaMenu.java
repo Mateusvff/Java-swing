@@ -10,26 +10,26 @@ import view.fornecedor.TelaFornecedorMenu;
 import view.vendedor.TelaVendedorMenu;
 
 
-public class TelaPessoa implements ActionListener {
+public class TelaPessoaMenu implements ActionListener {
 	private static JFrame principalPessoa = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Pessoas");
-	private static JButton funcionario = new JButton("Funcionários");
+	private static JButton vendedor = new JButton("Vendedores");
 	private static JButton cliente = new JButton("Clientes");
 	private static JButton fornecedor = new JButton("Fornecedores");
 
 	// Construtor de tela das opções de funcionários e clientes
 
-	public TelaPessoa() {
+	public TelaPessoaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(147, 10, 150, 30);
 		
 		principalPessoa.add(titulo);
-		principalPessoa.add(funcionario);
+		principalPessoa.add(vendedor);
 		principalPessoa.add(cliente);
 		principalPessoa.add(fornecedor);
 		
-		funcionario.setBounds(90, 50, 200, 30);
-		cliente.setBounds(90, 100, 200, 30);
+		cliente.setBounds(90, 50, 200, 30);
+		vendedor.setBounds(90, 100, 200, 30);
 		fornecedor.setBounds(90, 150, 200, 30);
 		
 		principalPessoa.setLayout(null);
@@ -37,7 +37,7 @@ public class TelaPessoa implements ActionListener {
 		principalPessoa.setSize(400, 300);
 		principalPessoa.setVisible(true);
 		
-		funcionario.addActionListener(this);
+		vendedor.addActionListener(this);
 		cliente.addActionListener(this);
 		fornecedor.addActionListener(this);
 	}
@@ -50,10 +50,11 @@ public class TelaPessoa implements ActionListener {
 //		fornecedor.addActionListener(menu);
 //	}
 	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
-		if(src == funcionario) {
+		if(src == vendedor) {
 			new TelaVendedorMenu();
 		}
 		

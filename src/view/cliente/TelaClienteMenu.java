@@ -29,8 +29,8 @@ public class TelaClienteMenu implements ActionListener {
 		principalCliente.add(deletar);
 		principalCliente.add(buscar);
 		
-		visualizar.setBounds(140, 50, 100, 30);
-		cadastrar.setBounds(140, 100, 100, 30);
+		cadastrar.setBounds(140, 50, 100, 30);
+		visualizar.setBounds(140, 100, 100, 30);
 		alterar.setBounds(140, 150, 100, 30);
 		deletar.setBounds(140, 200, 100, 30);
 		buscar.setBounds(140, 250, 100, 30);
