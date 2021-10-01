@@ -28,16 +28,6 @@ public class TelaCadastroCliente {
 
 		frame.setVisible(true);
 	}
-	
-	public static void main(String[] args) {
-		frame.setSize(400, 280);
-
-		JPanel panel = new JPanel();
-		frame.add(panel);
-		placeComponents(panel);
-
-		frame.setVisible(true);
-	}
 
 	private static void placeComponents(JPanel panel) {
 

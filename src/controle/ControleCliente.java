@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.JFormattedTextField;
+
 import modelo.pessoas.Cliente;
 
 public class ControleCliente {
@@ -101,12 +103,9 @@ public class ControleCliente {
 	}
 
 	// DELETAR CLIENTES
-	public void deletarClientes() {
-		System.out.println("Digite o CPF do cliente (somente números) à ser apagado: ");
-		String cpfBusca = sc.next();
-
+	public void deletarClientes(JFormattedTextField cpfDelete) {
 		for (int i = 0; i < clientes.size(); i++) {
-			if (clientes.get(i).getCpf().equals(cpfBusca)) {
+			if (clientes.get(i).getCpf().equals(cpfDelete)) {
 				clientes.remove(i);
 			}
 		}
