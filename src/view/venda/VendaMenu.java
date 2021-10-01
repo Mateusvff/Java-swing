@@ -1,11 +1,19 @@
 package view.venda;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import view.fornecedor.TelaAlteraFornecedor;
+import view.fornecedor.TelaApagaFornecedor;
+import view.fornecedor.TelaBuscaFornecedor;
+import view.fornecedor.TelaCadastroFornecedor;
+import view.fornecedor.TelaVisualizaFornecedor;
 
-public class TelaVendaMenu {
+
+public class VendaMenu implements ActionListener{
 	private static JFrame principalVendas = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Vendas");
 	private static JButton visualizar = new JButton("Visualizar");
@@ -14,7 +22,7 @@ public class TelaVendaMenu {
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 
-	public TelaVendaMenu() {
+	public VendaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(152, 10, 150, 30);
 		
@@ -38,6 +46,37 @@ public class TelaVendaMenu {
 	}
 	
 	public static void main(String[] args) {
-		TelaVendaMenu Vendas = new TelaVendaMenu();
+		VendaMenu Vendas = new VendaMenu();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Object src = e.getSource();
+		
+		if (src == visualizar) {
+			new TelaVisualizaVenda();
+
+		}
+
+		if (src == cadastrar) {
+			new TelaCadastroVenda();
+		
+		}
+
+		if (src == alterar) {
+			new TelaAlteraVenda();
+
+		}
+
+		if (src == deletar) {
+			new TelaApagaVenda();
+			
+		}
+
+		if (src == buscar) {
+			new TelaBuscaVenda();
+
+		}
+		
 	}
 }

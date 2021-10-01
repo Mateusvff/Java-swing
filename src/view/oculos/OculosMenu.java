@@ -1,4 +1,4 @@
-package view;
+package view.oculos;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -8,12 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import view.cliente.TelaClienteMenu;
-import view.fornecedor.TelaFornecedorMenu;
-import view.oculos.TelaCadastroOculos;
-import view.vendedor.TelaVendedorMenu;
+import view.cliente.ClienteMenu;
+import view.fornecedor.FornecedorMenu;
+import view.vendedor.VendedorMenu;
 
-public class TelaProdutoMenu implements ActionListener {
+public class OculosMenu implements ActionListener {
 	private static JFrame principalProdutos = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Óculos");
 	private static JButton cadastrar = new JButton("Cadastrar");
@@ -22,64 +21,66 @@ public class TelaProdutoMenu implements ActionListener {
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 
-	public TelaProdutoMenu() {
+	public OculosMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(152, 10, 150, 30);
-		
+
 		principalProdutos.add(titulo);
 		principalProdutos.add(cadastrar);
 		principalProdutos.add(visualizar);
 		principalProdutos.add(alterar);
 		principalProdutos.add(deletar);
 		principalProdutos.add(buscar);
-		
+
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
 		alterar.setBounds(140, 150, 100, 30);
 		deletar.setBounds(140, 200, 100, 30);
 		buscar.setBounds(140, 250, 100, 30);
-		
+
 		principalProdutos.setLayout(null);
 
 		principalProdutos.setSize(400, 350);
 		principalProdutos.setVisible(true);
-		
+
 		cadastrar.addActionListener(this);
 		visualizar.addActionListener(this);
 		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
 	}
-	
+
 	public static void main(String[] args) {
-		TelaProdutoMenu produto = new TelaProdutoMenu();
+		OculosMenu produto = new OculosMenu();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+
 		Object src = e.getSource();
-		
-		if(src == cadastrar) {
+
+		if (src == cadastrar) {
 			new TelaCadastroOculos();
 		}
-		
-		if(src == visualizar) {
-			
-		}
-		
-		if(src == alterar) {
-			
-		}
-		
-		if(src == deletar) {
-			
-		}
-		
-		if(src == buscar) {
-			
-		}
-		
-	}
 
+		if (src == visualizar) {
+			new TelaVisualizaOculos();
+
+		}
+
+		if (src == alterar) {
+			new TelaAlteraOculos();
+			
+		}
+
+		if (src == deletar) {
+			new TelaApagaOculos();
+
+		}
+
+		if (src == buscar) {
+			new TelaBuscaOculos();
+
+		}
+	}
 }

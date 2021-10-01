@@ -2,17 +2,18 @@ package view.vendedor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import controle.ControleCliente;
+import javax.swing.text.MaskFormatter;
 import controle.ControleVendedor;
-import view.TelaPrincipal;
+import view.Principal;
 
 public class TelaCadastroVendedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -40,6 +41,18 @@ public class TelaCadastroVendedor {
 	private static void placeComponents(JPanel panel) {
 
 	panel.setLayout(null);
+	
+	MaskFormatter mascaraCpf = null;
+	MaskFormatter mascaraTel = null;
+
+	try {
+		mascaraCpf = new MaskFormatter("#########-##");
+		mascaraTel = new MaskFormatter("(##)#####-####");
+	} catch (ParseException e1) {
+
+		System.err.println("Erro na formatação" + e1.getMessage());
+		e1.printStackTrace();
+	}
 
 	JLabel nomeLabel = new JLabel("Nome");
 	nomeLabel.setBounds(70, 10, 80, 25);
@@ -53,7 +66,7 @@ public class TelaCadastroVendedor {
 	telefoneLabel.setBounds(70, 40, 80, 25);
 	panel.add(telefoneLabel);
 
-	JTextField telefoneText = new JTextField(20);
+	JFormattedTextField telefoneText = new JFormattedTextField(mascaraTel);
 	telefoneText.setBounds(140, 40, 160, 25);
 	panel.add(telefoneText);
 
@@ -61,7 +74,7 @@ public class TelaCadastroVendedor {
 	cpfLabel.setBounds(70, 70, 80, 25);
 	panel.add(cpfLabel);
 	
-	JTextField cpfText = new JTextField(20);
+	JFormattedTextField cpfText = new JFormattedTextField(mascaraCpf);
 	cpfText.setBounds(140, 70, 160, 25);
 	panel.add(cpfText);
 	
@@ -100,7 +113,7 @@ public class TelaCadastroVendedor {
 			
 			JOptionPane.showMessageDialog(null, "Cadastro realizado");
 			
-			new TelaPrincipal();
+			new Principal();
 		}
 	});
 }

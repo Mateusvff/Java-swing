@@ -1,25 +1,22 @@
-package view.cliente;
+package view.venda;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
 import view.Principal;
 
-public class TelaCadastroCliente {
+public class TelaCadastroVenda {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
-	public TelaCadastroCliente() {
+	public TelaCadastroVenda() {
 		frame.setSize(400, 280);
 
 		JPanel panel = new JPanel();
@@ -39,23 +36,12 @@ public class TelaCadastroCliente {
 		frame.setVisible(true);
 	}
 
+	//!!!!!! ALTERAR DADOS !!!!!!!!
 	private static void placeComponents(JPanel panel) {
 
 		panel.setLayout(null);
 
-		MaskFormatter mascaraCpf = null;
-		MaskFormatter mascaraTel = null;
-
-		try {
-			mascaraCpf = new MaskFormatter("#########-##");
-			mascaraTel = new MaskFormatter("(##)#####-####");
-		} catch (ParseException e1) {
-
-			System.err.println("Erro na formatação" + e1.getMessage());
-			e1.printStackTrace();
-		}
-		
-		JLabel nomeLabel = new JLabel("Nome");
+		JLabel nomeLabel = new JLabel("Produto");
 		nomeLabel.setBounds(70, 10, 80, 25);
 		panel.add(nomeLabel);
 
@@ -67,7 +53,7 @@ public class TelaCadastroCliente {
 		telefoneLabel.setBounds(70, 40, 80, 25);
 		panel.add(telefoneLabel);
 		
-		JFormattedTextField telefoneText = new JFormattedTextField(mascaraTel);
+		JTextField telefoneText = new JTextField(20);
 		telefoneText.setBounds(140, 40, 160, 25);
 		panel.add(telefoneText);
 		
@@ -83,7 +69,7 @@ public class TelaCadastroCliente {
 		cpfLabel.setBounds(70, 100, 80, 25);
 		panel.add(cpfLabel);
 		
-		JFormattedTextField cpfText = new JFormattedTextField(mascaraCpf);
+		JTextField cpfText = new JTextField(20);
 		cpfText.setBounds(140, 100, 160, 25);
 		panel.add(cpfText);
 		

@@ -10,9 +10,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import controle.ControleCliente;
 import controle.ControleOculos;
-import view.TelaPrincipal;
+import view.Principal;
 
 public class TelaCadastroOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -127,7 +126,8 @@ public class TelaCadastroOculos {
 
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
 
-				new TelaPrincipal();
+				new Principal();
+				
 			}
 		});
 

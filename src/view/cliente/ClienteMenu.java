@@ -6,10 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-import view.fornecedor.TelaFornecedorMenu;
-import view.vendedor.TelaVendedorMenu;
-
-public class TelaClienteMenu implements ActionListener {
+public class ClienteMenu implements ActionListener {
 	private static JFrame principalCliente = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Clientes");
 	private static JButton visualizar = new JButton("Visualizar");
@@ -18,7 +15,7 @@ public class TelaClienteMenu implements ActionListener {
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 	
-	public TelaClienteMenu() {
+	public ClienteMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(155, 10, 150, 30);
 		
@@ -52,7 +49,7 @@ public class TelaClienteMenu implements ActionListener {
 		Object src = e.getSource();
 
 		if (src == visualizar) {
-			new TelaVendedorMenu();
+			new TelaVisualizaCliente(); 
 		}
 
 		if (src == cadastrar) {
@@ -60,15 +57,15 @@ public class TelaClienteMenu implements ActionListener {
 		}
 
 		if (src == alterar) {
-			new TelaFornecedorMenu();
+			new TelaAlteraCliente();
 		}
 		
 		if (src == deletar) {
-			new TelaFornecedorMenu();
+			new TelaApagaCliente();
 		}
 		
 		if (src == buscar) {
-			new TelaFornecedorMenu();
+			new TelaBuscaCliente();
 		}
 	}
 	

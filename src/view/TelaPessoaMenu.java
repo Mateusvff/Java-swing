@@ -5,9 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-import view.cliente.TelaClienteMenu;
-import view.fornecedor.TelaFornecedorMenu;
-import view.vendedor.TelaVendedorMenu;
+import view.cliente.ClienteMenu;
+import view.fornecedor.FornecedorMenu;
+import view.vendedor.VendedorMenu;
 
 
 public class TelaPessoaMenu implements ActionListener {
@@ -55,15 +55,15 @@ public class TelaPessoaMenu implements ActionListener {
 		Object src = e.getSource();
 		
 		if(src == vendedor) {
-			new TelaVendedorMenu();
+			new VendedorMenu();
 		}
 		
 		if(src == cliente) {
-			new TelaClienteMenu();
+			new ClienteMenu();
 		}
 		
 		if(src == fornecedor) {
-			new TelaFornecedorMenu();
+			new FornecedorMenu();
 		}
 	}
 }

@@ -2,18 +2,18 @@ package view.fornecedor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import controle.ControleCliente;
+import javax.swing.text.MaskFormatter;
 import controle.ControleFornecedor;
-import controle.ControleVendedor;
-import view.TelaPrincipal;
+import view.Principal;
 
 public class TelaCadastroFornecedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -41,6 +41,18 @@ public class TelaCadastroFornecedor {
 	private static void placeComponents(JPanel panel) {
 
 		panel.setLayout(null);
+		
+		MaskFormatter mascaraTel = null;
+		MaskFormatter mascaraCnpj = null;
+
+		try {
+			mascaraTel = new MaskFormatter("(##)#####-####");
+			mascaraCnpj = new MaskFormatter("##.###.###/0001-##");
+		} catch (ParseException e1) {
+
+			System.err.println("Erro na formatação" + e1.getMessage());
+			e1.printStackTrace();
+		}
 
 		JLabel nomeLabel = new JLabel("Nome");
 		nomeLabel.setBounds(70, 10, 80, 25);
@@ -54,7 +66,7 @@ public class TelaCadastroFornecedor {
 		cnpjLabel.setBounds(70, 40, 80, 25);
 		panel.add(cnpjLabel);
 
-		JTextField cnpjText = new JTextField(20);
+		JFormattedTextField cnpjText = new JFormattedTextField(mascaraCnpj);
 		cnpjText.setBounds(140, 40, 160, 25);
 		panel.add(cnpjText);
 
@@ -62,7 +74,7 @@ public class TelaCadastroFornecedor {
 		telefoneLabel.setBounds(70, 70, 80, 25);
 		panel.add(telefoneLabel);
 
-		JTextField telefoneText = new JTextField(20);
+		JFormattedTextField telefoneText = new JFormattedTextField(mascaraTel);
 		telefoneText.setBounds(140, 70, 160, 25);
 		panel.add(telefoneText);
 
@@ -101,7 +113,7 @@ public class TelaCadastroFornecedor {
 
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
 
-				new TelaPrincipal();
+				new Principal();
 			}
 		});
 	}

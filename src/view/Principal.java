@@ -8,9 +8,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import view.venda.TelaVendaMenu;
+import view.oculos.OculosMenu;
+import view.venda.VendaMenu;
 
-public class TelaPrincipal implements ActionListener {
+public class Principal implements ActionListener {
 	private static JFrame principal = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Menu Principal");
 	private static JButton produtos = new JButton("Produtos");
@@ -19,7 +20,7 @@ public class TelaPrincipal implements ActionListener {
 
 	// Construtor da tela de menu inicial que mostra as opções para o usuário
 	
-	public TelaPrincipal() {
+	public Principal() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
 		produtos.setBounds(140, 50, 100, 30);
@@ -41,7 +42,7 @@ public class TelaPrincipal implements ActionListener {
 		
 		//Chama o construtor TelaMenu()
 		
-		TelaPrincipal menu = new TelaPrincipal(); 
+		Principal menu = new Principal(); 
 		
 		produtos.addActionListener(menu);
 		pessoas.addActionListener(menu);
@@ -54,7 +55,7 @@ public class TelaPrincipal implements ActionListener {
 		Object src = e.getSource();
 		
 		if (src == produtos) {
-			TelaProdutoMenu telaProduto = new TelaProdutoMenu();
+			OculosMenu telaProduto = new OculosMenu();
 		}
 		
 		if (src == pessoas) {
@@ -62,7 +63,7 @@ public class TelaPrincipal implements ActionListener {
 		}
 		
 		if (src == vendas) {
-			TelaVendaMenu telaVendas = new TelaVendaMenu();
+			VendaMenu telaVendas = new VendaMenu();
 		}
 
 	}
