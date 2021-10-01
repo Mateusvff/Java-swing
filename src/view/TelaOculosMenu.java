@@ -4,7 +4,7 @@ import java.awt.Font;
 
 import javax.swing.*;
 
-public class TelaODSMenu {
+public class TelaOculosMenu {
 	private static JFrame principalOculosDeSol = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Óculos de Sol");
 	private static JButton visualizar = new JButton("Visualizar");
@@ -13,7 +13,7 @@ public class TelaODSMenu {
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 	
-	public TelaODSMenu() {
+	public TelaOculosMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
 		

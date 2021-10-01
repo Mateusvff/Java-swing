@@ -51,10 +51,6 @@ public class TelaMenu implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
-		if(src == produtos) {
-			TelaProdutos telaProdutos = new TelaProdutos();
-		}
-		
 		if (src == pessoas) {
 			TelaPessoa telaPessoas = new TelaPessoa();
 		}

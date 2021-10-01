@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class TelaCadastroArmacao {
+public class TelaCadastroOculos {
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Loja de Óculos");
