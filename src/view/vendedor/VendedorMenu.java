@@ -7,41 +7,45 @@ import java.awt.event.ActionEvent;
 import javax.swing.*;
 
 public class VendedorMenu implements ActionListener {
-	private JFrame principalCliente = new JFrame("Loja de Óculos");
+	private JFrame principalVendedor = new JFrame("Loja de Óculos");
 	private JLabel titulo = new JLabel("Vendedores");
 	private JButton visualizar = new JButton("Visualizar");
 	private JButton cadastrar = new JButton("Cadastrar");
 	private JButton alterar = new JButton("Alterar");
 	private JButton deletar = new JButton("Deletar");
 	private JButton buscar = new JButton("Buscar");
+	private JButton voltar = new JButton("Voltar");
 	
 	public VendedorMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(135, 10, 150, 30);
 		
-		principalCliente.add(titulo);
-		principalCliente.add(visualizar);
-		principalCliente.add(cadastrar);
-		principalCliente.add(alterar);
-		principalCliente.add(deletar);
-		principalCliente.add(buscar);
+		principalVendedor.add(titulo);
+		principalVendedor.add(visualizar);
+		principalVendedor.add(cadastrar);
+		principalVendedor.add(alterar);
+		principalVendedor.add(deletar);
+		principalVendedor.add(buscar);
+		principalVendedor.add(voltar);
 		
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
 		alterar.setBounds(140, 150, 100, 30);
 		deletar.setBounds(140, 200, 100, 30);
 		buscar.setBounds(140, 250, 100, 30);
+		voltar.setBounds(10, 280, 70, 25);
 		
-		principalCliente.setLayout(null);
+		principalVendedor.setLayout(null);
 
-		principalCliente.setSize(400, 350);
-		principalCliente.setVisible(true);
+		principalVendedor.setSize(400, 350);
+		principalVendedor.setVisible(true);
 		
 		visualizar.addActionListener(this);
 		cadastrar.addActionListener(this);
 		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
+		voltar.addActionListener(this);
 	}
 
 	@Override
@@ -54,19 +58,24 @@ public class VendedorMenu implements ActionListener {
 
 		if (src == cadastrar) {
 			new TelaCadastroVendedor();
+			principalVendedor.dispose();
 		}
 
 		if (src == alterar) {
 			new TelaAlteraVendedor();
 		}
-		
+
 		if (src == deletar) {
 			new TelaApagaVendedor();
-			
 		}
-		
+
 		if (src == buscar) {
 			new TelaBuscaVendedor();
+		}
+		
+		if (src == voltar) {
+			new VendedorMenu();
+			principalVendedor.dispose();
 		}
 	}
 }

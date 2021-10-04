@@ -6,42 +6,48 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
+import view.TelaPessoaMenu;
+
 public class FornecedorMenu implements ActionListener {
-	private static JFrame principalCliente = new JFrame("Loja de Óculos");
+	private static JFrame principalFornecedor = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Fornecedores");
 	private static JButton visualizar = new JButton("Visualizar");
 	private static JButton cadastrar = new JButton("Cadastrar");
 	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
+	private static JButton voltar = new JButton("Voltar");
 
 	public FornecedorMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(125, 10, 150, 30);
 
-		principalCliente.add(titulo);
-		principalCliente.add(visualizar);
-		principalCliente.add(cadastrar);
-		principalCliente.add(alterar);
-		principalCliente.add(deletar);
-		principalCliente.add(buscar);
+		principalFornecedor.add(titulo);
+		principalFornecedor.add(visualizar);
+		principalFornecedor.add(cadastrar);
+		principalFornecedor.add(alterar);
+		principalFornecedor.add(deletar);
+		principalFornecedor.add(buscar);
+		principalFornecedor.add(voltar);
 
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
 		alterar.setBounds(140, 150, 100, 30);
 		deletar.setBounds(140, 200, 100, 30);
 		buscar.setBounds(140, 250, 100, 30);
+		voltar.setBounds(10, 280, 70, 25);
 
-		principalCliente.setLayout(null);
+		principalFornecedor.setLayout(null);
 
-		principalCliente.setSize(400, 350);
-		principalCliente.setVisible(true);
+		principalFornecedor.setSize(400, 350);
+		principalFornecedor.setVisible(true);
 
 		visualizar.addActionListener(this);
 		cadastrar.addActionListener(this);
 		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
+		voltar.addActionListener(this);
 	}
 
 	@Override
@@ -50,26 +56,33 @@ public class FornecedorMenu implements ActionListener {
 
 		if (src == visualizar) {
 			new TelaVisualizaFornecedor();
+			principalFornecedor.dispose();
 
 		}
 
 		if (src == cadastrar) {
 			new TelaCadastroFornecedor();
+			principalFornecedor.dispose();
 		}
 
 		if (src == alterar) {
 			new TelaAlteraFornecedor();
-
+			principalFornecedor.dispose();
 		}
 
 		if (src == deletar) {
 			new TelaApagaFornecedor();
-
+			principalFornecedor.dispose();
 		}
 
 		if (src == buscar) {
 			new TelaBuscaFornecedor();
+			principalFornecedor.dispose();
+		}
 
+		if (src == voltar) {
+			new TelaPessoaMenu();
+			principalFornecedor.dispose();
 		}
 	}
 }

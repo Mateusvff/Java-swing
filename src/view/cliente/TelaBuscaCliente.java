@@ -52,6 +52,22 @@ public class TelaBuscaCliente{
 		registerButton.setBounds(250, 10, 100, 25);
 		panel.add(registerButton);
 
+		JButton alterarButton = new JButton("Cancelar");
+		alterarButton.setBounds(10, 50, 85, 25);
+		panel.add(alterarButton);
+
+		alterarButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == alterarButton) {
+					new ClienteMenu();
+					frame.dispose();
+				}
+			}
+		});
+		
 		registerButton.addActionListener(new ActionListener() {
 
 			@Override

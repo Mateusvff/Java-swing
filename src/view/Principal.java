@@ -50,14 +50,17 @@ public class Principal implements ActionListener {
 		
 		if (src == produtos) {
 			new OculosMenu();
+			principal.dispose();
 		}
 		
 		if (src == pessoas) {
 			new TelaPessoaMenu();
+			principal.dispose();
 		}
 		
 		if (src == vendas) {
 			new VendaMenu();
+			principal.dispose();
 		}
 
 	}

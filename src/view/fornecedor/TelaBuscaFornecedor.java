@@ -51,6 +51,22 @@ public class TelaBuscaFornecedor {
 		registerButton.setBounds(290, 10, 80, 25);
 		panel.add(registerButton);
 		
+		JButton voltar = new JButton("Cancelar");
+		voltar.setBounds(10, 50, 85, 25);
+		panel.add(voltar);
+
+		voltar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == voltar) {
+					new FornecedorMenu();
+					frame.dispose();
+				}
+			}
+		});
+		
 		registerButton.addActionListener(new ActionListener() {
 
 			@Override

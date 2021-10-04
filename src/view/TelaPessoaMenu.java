@@ -12,6 +12,7 @@ import view.vendedor.VendedorMenu;
 
 public class TelaPessoaMenu implements ActionListener {
 	private static JFrame principalPessoa = new JFrame("Loja de Óculos");
+	private static JButton voltar = new JButton("voltar");
 	private static JLabel titulo = new JLabel("Pessoas");
 	private static JButton vendedor = new JButton("Vendedores");
 	private static JButton cliente = new JButton("Clientes");
@@ -25,10 +26,12 @@ public class TelaPessoaMenu implements ActionListener {
 		principalPessoa.add(vendedor);
 		principalPessoa.add(cliente);
 		principalPessoa.add(fornecedor);
+		principalPessoa.add(voltar);
 		
 		cliente.setBounds(90, 50, 200, 30);
 		vendedor.setBounds(90, 100, 200, 30);
 		fornecedor.setBounds(90, 150, 200, 30);
+		voltar.setBounds(10, 230, 70, 25);
 		
 		principalPessoa.setLayout(null);
 
@@ -38,15 +41,8 @@ public class TelaPessoaMenu implements ActionListener {
 		vendedor.addActionListener(this);
 		cliente.addActionListener(this);
 		fornecedor.addActionListener(this);
+		voltar.addActionListener(this);
 	}
-	
-//	public static void main(String[] args) {
-//		TelaPessoa menu = new TelaPessoa();
-//		
-//		funcionario.addActionListener(menu);
-//		cliente.addActionListener(menu);
-//		fornecedor.addActionListener(menu);
-//	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -54,14 +50,24 @@ public class TelaPessoaMenu implements ActionListener {
 		
 		if(src == vendedor) {
 			new VendedorMenu();
+			principalPessoa.dispose();
 		}
 		
 		if(src == cliente) {
 			new ClienteMenu();
+			principalPessoa.dispose();
+			
 		}
 		
 		if(src == fornecedor) {
 			new FornecedorMenu();
+			principalPessoa.dispose();
+		}
+		
+		if (src == voltar) {
+			new Principal();
+			principalPessoa.dispose();
+
 		}
 	}
 }

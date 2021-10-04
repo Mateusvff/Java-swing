@@ -15,6 +15,7 @@ import javax.swing.text.MaskFormatter;
 import controle.ControleVendedor;
 import modelo.pessoas.Vendedor;
 
+
 public class TelaAlteraVendedor implements ActionListener {
 	private JFrame frame = new JFrame("Loja de Óculos");
 
@@ -106,6 +107,22 @@ public class TelaAlteraVendedor implements ActionListener {
 		salarioText2 = new JTextField(20);
 		salarioText2.setBounds(110, 210, 240, 25);
 		panel.add(salarioText2);
+		
+		JButton voltar = new JButton("Cancelar");
+		voltar.setBounds(10, 50, 85, 25);
+		panel.add(voltar);
+
+		voltar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == voltar) {
+					new VendedorMenu();
+					frame.dispose();
+				}
+			}
+		});
 
 		salvarButton.setBounds(100, 260, 200, 25);
 		salvarButton.addActionListener(this);

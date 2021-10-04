@@ -55,48 +55,65 @@ public class TelaCadastroFornecedor {
 		}
 
 		JLabel nomeLabel = new JLabel("Nome");
-		nomeLabel.setBounds(70, 10, 80, 25);
+		nomeLabel.setBounds(30, 10, 80, 25);
 		panel.add(nomeLabel);
 
 		JTextField nomeText = new JTextField(20);
-		nomeText.setBounds(140, 10, 160, 25);
+		nomeText.setBounds(100, 10, 180, 25);
 		panel.add(nomeText);
 
 		JLabel cnpjLabel = new JLabel("CNPJ");
-		cnpjLabel.setBounds(70, 40, 80, 25);
+		cnpjLabel.setBounds(30, 40, 80, 25);
 		panel.add(cnpjLabel);
 
 		JFormattedTextField cnpjText = new JFormattedTextField(mascaraCnpj);
-		cnpjText.setBounds(140, 40, 160, 25);
+		cnpjText.setBounds(100, 40, 180, 25);
 		panel.add(cnpjText);
 
 		JLabel telefoneLabel = new JLabel("Telefone");
-		telefoneLabel.setBounds(70, 70, 80, 25);
+		telefoneLabel.setBounds(30, 70, 80, 25);
 		panel.add(telefoneLabel);
 
 		JFormattedTextField telefoneText = new JFormattedTextField(mascaraTel);
-		telefoneText.setBounds(140, 70, 160, 25);
+		telefoneText.setBounds(100, 70, 180, 25);
 		panel.add(telefoneText);
 
 		JLabel enderecoLabel = new JLabel("Endereço");
-		enderecoLabel.setBounds(70, 100, 80, 25);
+		enderecoLabel.setBounds(30, 100, 80, 25);
 		panel.add(enderecoLabel);
 
 		JTextField enderecoText = new JTextField(20);
-		enderecoText.setBounds(140, 100, 160, 25);
+		enderecoText.setBounds(100, 100, 180, 25);
 		panel.add(enderecoText);
 
 		JLabel emailLabel = new JLabel("Email");
-		emailLabel.setBounds(70, 130, 80, 25);
+		emailLabel.setBounds(30, 130, 80, 25);
 		panel.add(emailLabel);
 
 		JTextField emailText = new JTextField(20);
-		emailText.setBounds(140, 130, 160, 25);
+		emailText.setBounds(100, 130, 180, 25);
 		panel.add(emailText);
 
 		JButton registerButton = new JButton("Cadastrar");
-		registerButton.setBounds(140, 180, 100, 25);
+		registerButton.setBounds(100, 180, 90, 25);
 		panel.add(registerButton);
+		
+		JButton voltar = new JButton("Cancelar");
+		voltar.setBounds(195, 180, 85, 25);
+		panel.add(voltar);
+		
+
+		voltar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == voltar) {
+					new FornecedorMenu();
+					frame.dispose();
+				}
+			}
+		});
 
 		registerButton.addActionListener(new ActionListener() {
 

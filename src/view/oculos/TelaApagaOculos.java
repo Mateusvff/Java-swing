@@ -1,5 +1,7 @@
 package view.oculos;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
@@ -46,6 +48,24 @@ public class TelaApagaOculos {
 		JButton registerButton = new JButton("Apagar");
 		registerButton.setBounds(250, 10, 100, 25);
 		panel.add(registerButton);
+		
+		JButton apagarButton = new JButton("Cancelar");
+		apagarButton.setBounds(10, 50, 85, 25);
+		panel.add(apagarButton);
+
+		apagarButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == apagarButton) {
+					new OculosMenu();
+					frame.dispose();
+				}
+			}
+		});
+		
+		
 	}
 	
 }

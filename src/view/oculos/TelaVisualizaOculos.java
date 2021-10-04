@@ -1,5 +1,7 @@
 package view.oculos;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
@@ -46,6 +48,22 @@ public class TelaVisualizaOculos {
 		JButton registerButton = new JButton("Visualizar");
 		registerButton.setBounds(250, 10, 100, 25);
 		panel.add(registerButton);
+		
+		JButton visualizarButton = new JButton("Cancelar");
+		visualizarButton.setBounds(10, 50, 85, 25);
+		panel.add(visualizarButton);
+
+		visualizarButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == visualizarButton) {
+					new OculosMenu();
+					frame.dispose();
+				}
+			}
+		});
 	}
 
 }

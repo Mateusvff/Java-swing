@@ -1,5 +1,7 @@
 package view.fornecedor;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
@@ -46,6 +48,22 @@ public class TelaVisualizaFornecedor {
 		JButton registerButton = new JButton("Visualizar");
 		registerButton.setBounds(290, 10, 90, 25);
 		panel.add(registerButton);
+		
+		JButton voltar = new JButton("Cancelar");
+		voltar.setBounds(10, 50, 85, 25);
+		panel.add(voltar);
+
+		voltar.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == voltar) {
+					new FornecedorMenu();
+					frame.dispose();
+				}
+			}
+		});
 	}
 
 }

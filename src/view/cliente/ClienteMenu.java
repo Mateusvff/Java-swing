@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import view.TelaPessoaMenu;
+
 public class ClienteMenu implements ActionListener {
 	private static JFrame principalCliente = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Clientes");
@@ -14,6 +16,7 @@ public class ClienteMenu implements ActionListener {
 	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
+	private static JButton voltar = new JButton("Voltar");
 	
 	public ClienteMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -25,12 +28,14 @@ public class ClienteMenu implements ActionListener {
 		principalCliente.add(alterar);
 		principalCliente.add(deletar);
 		principalCliente.add(buscar);
+		principalCliente.add(voltar);
 		
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
 		alterar.setBounds(140, 150, 100, 30);
 		deletar.setBounds(140, 200, 100, 30);
 		buscar.setBounds(140, 250, 100, 30);
+		voltar.setBounds(10, 280, 70, 25);
 		
 		principalCliente.setLayout(null);
 
@@ -42,6 +47,7 @@ public class ClienteMenu implements ActionListener {
 		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
+		voltar.addActionListener(this);
 	}
 
 	@Override
@@ -49,23 +55,33 @@ public class ClienteMenu implements ActionListener {
 		Object src = e.getSource();
 
 		if (src == visualizar) {
-			new TelaVisualizaCliente(); 
+			new TelaVisualizaCliente();
+			principalCliente.dispose();
 		}
 
 		if (src == cadastrar) {
 			new TelaCadastroCliente();
+			principalCliente.dispose();
 		}
 
 		if (src == alterar) {
 			new TelaAlteraCliente();
+			principalCliente.dispose();
 		}
 		
 		if (src == deletar) {
 			new TelaApagaCliente();
+			principalCliente.dispose();
 		}
 		
 		if (src == buscar) {
 			new TelaBuscaCliente();
+			principalCliente.dispose();
+		}
+		
+		if (src == voltar) {
+			new TelaPessoaMenu();
+			principalCliente.dispose();
 		}
 	}
 	

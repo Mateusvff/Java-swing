@@ -1,5 +1,7 @@
 package view.oculos;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 import javax.swing.JButton;
@@ -11,7 +13,7 @@ import javax.swing.text.MaskFormatter;
 
 public class TelaAlteraOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
-
+	
 	public TelaAlteraOculos() {
 		frame.setSize(400, 280);
 
@@ -46,6 +48,22 @@ public class TelaAlteraOculos {
 		JButton registerButton = new JButton("Alterar");
 		registerButton.setBounds(250, 10, 100, 25);
 		panel.add(registerButton);
+		
+		JButton alterarButton = new JButton("Cancelar");
+		alterarButton.setBounds(10, 50, 85, 25);
+		panel.add(alterarButton);
+
+		alterarButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Object src = e.getSource();
+
+				if (src == alterarButton) {
+					new OculosMenu();
+					frame.dispose();
+				}
+			}
+		});
 	}
 
 }

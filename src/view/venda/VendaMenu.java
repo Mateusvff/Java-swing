@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import view.Principal;
+
 
 public class VendaMenu implements ActionListener{
 	private static JFrame principalVendas = new JFrame("Loja de Óculos");
@@ -15,6 +17,7 @@ public class VendaMenu implements ActionListener{
 	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
+	private static JButton voltar = new JButton("Voltar");
 
 	public VendaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -26,17 +29,26 @@ public class VendaMenu implements ActionListener{
 		principalVendas.add(alterar);
 		principalVendas.add(deletar);
 		principalVendas.add(buscar);
+		principalVendas.add(voltar);
 		
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
 		alterar.setBounds(140, 150, 100, 30);
 		deletar.setBounds(140, 200, 100, 30);
 		buscar.setBounds(140, 250, 100, 30);
+		voltar.setBounds(10, 280, 70, 25);
 		
 		principalVendas.setLayout(null);
 
 		principalVendas.setSize(400, 350);
 		principalVendas.setVisible(true);
+		
+		visualizar.addActionListener(this);
+		cadastrar.addActionListener(this);
+		alterar.addActionListener(this);
+		deletar.addActionListener(this);
+		buscar.addActionListener(this);
+		voltar.addActionListener(this);
 	}
 	
 
@@ -46,28 +58,35 @@ public class VendaMenu implements ActionListener{
 		
 		if (src == visualizar) {
 			new TelaVisualizaVenda();
+			principalVendas.dispose();
 
 		}
 
 		if (src == cadastrar) {
 			new TelaCadastroVenda();
-		
+			principalVendas.dispose();
 		}
 
 		if (src == alterar) {
 			new TelaAlteraVenda();
-
+			principalVendas.dispose();
 		}
 
 		if (src == deletar) {
 			new TelaApagaVenda();
-			
+			principalVendas.dispose();
 		}
 
 		if (src == buscar) {
 			new TelaBuscaVenda();
-
+			principalVendas.dispose();
 		}
+		
+		if (src == voltar) {
+			new Principal();
+			principalVendas.dispose();
+		}
+		
 		
 	}
 }
