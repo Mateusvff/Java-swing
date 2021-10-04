@@ -12,8 +12,6 @@ import javax.swing.JTextField;
 
 import controle.ControleCliente;
 import view.Principal;
-import view.fornecedor.FornecedorMenu;
-
 public class TelaCadastroVenda {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
