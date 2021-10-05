@@ -15,7 +15,6 @@ import javax.swing.text.MaskFormatter;
 import controle.ControleVendedor;
 import modelo.pessoas.Vendedor;
 
-
 public class TelaAlteraVendedor implements ActionListener {
 	private JFrame frame = new JFrame("Loja de Óculos");
 

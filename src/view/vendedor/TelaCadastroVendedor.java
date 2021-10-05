@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 import controle.ControleVendedor;
-import view.Principal;
 
 public class TelaCadastroVendedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -118,8 +117,8 @@ public class TelaCadastroVendedor {
 			controleVendedor.cadastroVendedor(nome, telefone, cpf, email, salario);
 			
 			JOptionPane.showMessageDialog(null, "Cadastro realizado");
-			
-			new Principal();
+			new VendedorMenu();
+			frame.dispose();
 		}
 	});
 }

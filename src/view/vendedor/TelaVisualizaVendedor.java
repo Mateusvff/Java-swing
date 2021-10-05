@@ -31,7 +31,7 @@ public class TelaVisualizaVendedor {
 		} else {
 			for (int i = 0; i < ControleVendedor.vendedores.size(); i++) {
 				Vendedor vendedor = ControleVendedor.vendedores.get(i);
-				listaVendedor.addElement("Nome: " + vendedor.getNome() + " - " + "CPF:" + vendedor.getCpf());
+				listaVendedor.addElement("Nome: " + vendedor.getNome() + " - " + "CPF: " + vendedor.getCpf());
 			}
 		}
 		
