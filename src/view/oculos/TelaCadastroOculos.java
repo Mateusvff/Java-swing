@@ -2,16 +2,13 @@ package view.oculos;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.text.MaskFormatter;
 
 import controle.ControleOculos;
 import view.Principal;
@@ -32,25 +29,13 @@ public class TelaCadastroOculos {
 
 	private static void placeComponents(JPanel panel) {
 		
-		MaskFormatter mascaraId = null;
-		MaskFormatter mascaraEstoque = null;
-
-		try {
-			mascaraId = new MaskFormatter("#####");
-			mascaraEstoque = new MaskFormatter("#####");
-		} catch (ParseException e1) {
-
-			System.err.println("Erro na formatação" + e1.getMessage());
-			e1.printStackTrace();
-		}
-
 		panel.setLayout(null);
 
-		JLabel idLabel = new JLabel("ID");
+		JLabel idLabel = new JLabel("Id");
 		idLabel.setBounds(70, 10, 80, 25);
 		panel.add(idLabel);
 
-		JFormattedTextField idText = new JFormattedTextField(mascaraId);
+		JTextField idText = new JTextField(5);
 		idText.setBounds(140, 10, 180, 25);
 		panel.add(idText);
 
@@ -86,11 +71,11 @@ public class TelaCadastroOculos {
 		corText.setBounds(140, 130, 180, 25);
 		panel.add(corText);
 
-		JFormattedTextField estoqueLabel = new JFormattedTextField(mascaraEstoque);
+		JLabel estoqueLabel = new JLabel("Estoque");
 		estoqueLabel.setBounds(70, 160, 80, 25);
 		panel.add(estoqueLabel);
-
-		JTextField estoqueText = new JTextField(20);
+		
+		JTextField estoqueText = new JTextField(5);
 		estoqueText.setBounds(140, 160, 180, 25);
 		panel.add(estoqueText);
 

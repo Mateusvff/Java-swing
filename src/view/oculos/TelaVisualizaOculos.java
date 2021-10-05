@@ -1,18 +1,22 @@
 package view.oculos;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.text.MaskFormatter;
+
+import controle.ControleOculos;
+import modelo.produtos.Oculos;
 
 public class TelaVisualizaOculos {
-	private static JFrame frame = new JFrame("Loja de Óculos");
+	private JFrame frame = new JFrame("Loja de Óculos");
+	private DefaultListModel<String> listaOculos = new DefaultListModel<>();
+	private JLabel label = new JLabel("Ainda não há óculos cadastrados na loja");
+	private JButton voltar = new JButton("Voltar");
 
 	public TelaVisualizaOculos() {
 		frame.setSize(400, 280);
@@ -20,50 +24,42 @@ public class TelaVisualizaOculos {
 		JPanel panel = new JPanel();
 		frame.add(panel);
 		placeComponents(panel);
-
 		frame.setVisible(true);
+
+		label.setBounds(10, 10, 150, 30);
+		
 	}
 
 	private void placeComponents(JPanel panel) {
-		panel.setLayout(null);
-
-		MaskFormatter mascaraId = null;
-
-		try {
-			mascaraId = new MaskFormatter("#####");
-		} catch (ParseException e1) {
-
-			System.err.println("Erro na formatação" + e1.getMessage());
-			e1.printStackTrace();
+		if (ControleOculos.oculosProd.isEmpty()) {
+			panel.add(label);
+		} else {
+			for (int i = 0; i < ControleOculos.oculosProd.size(); i++) {
+				Oculos oculos = ControleOculos.oculosProd.get(i);
+				listaOculos.addElement("Id: " + oculos.getId() + " - " + "Estoque: " + oculos.getQuantEstoque());
+			}
 		}
-
-		JLabel instrucao = new JLabel("Digite o ID ");
-		instrucao.setBounds(20, 10, 80, 25);
-		panel.add(instrucao);
-
-		JFormattedTextField idVisualiza = new JFormattedTextField(mascaraId);
-		idVisualiza.setBounds(110, 10, 100, 25);
-		panel.add(idVisualiza);
 		
-		JButton registerButton = new JButton("Visualizar");
-		registerButton.setBounds(250, 10, 100, 25);
-		panel.add(registerButton);
-		
-		JButton visualizarButton = new JButton("Cancelar");
-		visualizarButton.setBounds(10, 50, 85, 25);
-		panel.add(visualizarButton);
-
-		visualizarButton.addActionListener(new ActionListener() {
+		voltar.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 
-				if (src == visualizarButton) {
+				if (src == voltar) {
 					new OculosMenu();
 					frame.dispose();
 				}
+
 			}
+			
 		});
+
+		JList<String> jList = new JList<>(listaOculos);
+		jList.setBounds(0, 0, 400, 280);
+
+		panel.add(jList);
+		panel.add(voltar);
 	}
+
 
 }
