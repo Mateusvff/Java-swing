@@ -13,7 +13,6 @@ public class FornecedorMenu implements ActionListener {
 	private static JLabel titulo = new JLabel("Fornecedores");
 	private static JButton visualizar = new JButton("Visualizar");
 	private static JButton cadastrar = new JButton("Cadastrar");
-	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 	private static JButton voltar = new JButton("Voltar");
@@ -25,26 +24,23 @@ public class FornecedorMenu implements ActionListener {
 		principalFornecedor.add(titulo);
 		principalFornecedor.add(visualizar);
 		principalFornecedor.add(cadastrar);
-		principalFornecedor.add(alterar);
 		principalFornecedor.add(deletar);
 		principalFornecedor.add(buscar);
 		principalFornecedor.add(voltar);
 
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
-		voltar.setBounds(10, 280, 70, 25);
+		deletar.setBounds(140, 150, 100, 30);
+		buscar.setBounds(140, 200, 100, 30);
+		voltar.setBounds(10, 230, 70, 25);
 
 		principalFornecedor.setLayout(null);
 
-		principalFornecedor.setSize(400, 350);
+		principalFornecedor.setSize(400, 300);
 		principalFornecedor.setVisible(true);
 
 		visualizar.addActionListener(this);
 		cadastrar.addActionListener(this);
-		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
 		voltar.addActionListener(this);
@@ -62,11 +58,6 @@ public class FornecedorMenu implements ActionListener {
 
 		if (src == cadastrar) {
 			new TelaCadastroFornecedor();
-			principalFornecedor.dispose();
-		}
-
-		if (src == alterar) {
-			new TelaAlteraFornecedor();
 			principalFornecedor.dispose();
 		}
 

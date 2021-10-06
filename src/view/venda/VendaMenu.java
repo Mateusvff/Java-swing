@@ -14,7 +14,6 @@ public class VendaMenu implements ActionListener{
 	private static JLabel titulo = new JLabel("Vendas");
 	private static JButton visualizar = new JButton("Visualizar");
 	private static JButton cadastrar = new JButton("Cadastrar");
-	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 	private static JButton voltar = new JButton("Voltar");
@@ -26,33 +25,28 @@ public class VendaMenu implements ActionListener{
 		principalVendas.add(titulo);
 		principalVendas.add(cadastrar);
 		principalVendas.add(visualizar);
-		principalVendas.add(alterar);
 		principalVendas.add(deletar);
 		principalVendas.add(buscar);
 		principalVendas.add(voltar);
 		
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
-		voltar.setBounds(10, 280, 70, 25);
+		deletar.setBounds(140, 150, 100, 30);
+		buscar.setBounds(140, 200, 100, 30);
+		voltar.setBounds(10, 230, 70, 25);
 		
 		principalVendas.setLayout(null);
 
-		principalVendas.setSize(400, 350);
+		principalVendas.setSize(400, 300);
 		principalVendas.setVisible(true);
 		
 		visualizar.addActionListener(this);
 		cadastrar.addActionListener(this);
-		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
 		voltar.addActionListener(this);
 	}
-	
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
@@ -64,11 +58,6 @@ public class VendaMenu implements ActionListener{
 
 		if (src == cadastrar) {
 			new TelaCadastroVenda();
-			principalVendas.dispose();
-		}
-
-		if (src == alterar) {
-			new TelaAlteraVenda();
 			principalVendas.dispose();
 		}
 
@@ -86,7 +75,5 @@ public class VendaMenu implements ActionListener{
 			new Principal();
 			principalVendas.dispose();
 		}
-		
-		
 	}
 }

@@ -11,7 +11,6 @@ public class VendedorMenu implements ActionListener {
 	private JLabel titulo = new JLabel("Vendedores");
 	private JButton visualizar = new JButton("Visualizar");
 	private JButton cadastrar = new JButton("Cadastrar");
-	private JButton alterar = new JButton("Alterar");
 	private JButton deletar = new JButton("Deletar");
 	private JButton buscar = new JButton("Buscar");
 	private JButton voltar = new JButton("Voltar");
@@ -23,32 +22,28 @@ public class VendedorMenu implements ActionListener {
 		principalVendedor.add(titulo);
 		principalVendedor.add(visualizar);
 		principalVendedor.add(cadastrar);
-		principalVendedor.add(alterar);
 		principalVendedor.add(deletar);
 		principalVendedor.add(buscar);
 		principalVendedor.add(voltar);
 		
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
-		voltar.setBounds(10, 280, 70, 25);
+		deletar.setBounds(140, 150, 100, 30);
+		buscar.setBounds(140, 200, 100, 30);
+		voltar.setBounds(10, 230, 70, 25);
 		
 		principalVendedor.setLayout(null);
 
-		principalVendedor.setSize(400, 350);
+		principalVendedor.setSize(400, 300);
 		principalVendedor.setVisible(true);
 		
 		visualizar.addActionListener(this);
 		cadastrar.addActionListener(this);
-		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
 		voltar.addActionListener(this);
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 
@@ -61,10 +56,6 @@ public class VendedorMenu implements ActionListener {
 			principalVendedor.dispose();
 		}
 
-		if (src == alterar) {
-			new TelaAlteraVendedor();
-		}
-
 		if (src == deletar) {
 			new TelaApagaVendedor();
 		}
@@ -72,10 +63,11 @@ public class VendedorMenu implements ActionListener {
 		if (src == buscar) {
 			new TelaBuscaVendedor();
 		}
-		
+
 		if (src == voltar) {
 			new VendedorMenu();
 			principalVendedor.dispose();
+
 		}
 	}
 }

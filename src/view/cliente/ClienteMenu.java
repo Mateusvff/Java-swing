@@ -13,7 +13,6 @@ public class ClienteMenu implements ActionListener {
 	private static JLabel titulo = new JLabel("Clientes");
 	private static JButton visualizar = new JButton("Visualizar");
 	private static JButton cadastrar = new JButton("Cadastrar");
-	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 	private static JButton voltar = new JButton("Voltar");
@@ -25,26 +24,23 @@ public class ClienteMenu implements ActionListener {
 		principalCliente.add(titulo);
 		principalCliente.add(visualizar);
 		principalCliente.add(cadastrar);
-		principalCliente.add(alterar);
 		principalCliente.add(deletar);
 		principalCliente.add(buscar);
 		principalCliente.add(voltar);
 		
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
-		voltar.setBounds(10, 280, 70, 25);
+		deletar.setBounds(140, 150, 100, 30);
+		buscar.setBounds(140, 200, 100, 30);
+		voltar.setBounds(10, 230, 70, 25);
 		
 		principalCliente.setLayout(null);
 
-		principalCliente.setSize(400, 350);
+		principalCliente.setSize(400, 300);
 		principalCliente.setVisible(true);
 		
 		visualizar.addActionListener(this);
 		cadastrar.addActionListener(this);
-		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
 		voltar.addActionListener(this);
@@ -61,11 +57,6 @@ public class ClienteMenu implements ActionListener {
 
 		if (src == cadastrar) {
 			new TelaCadastroCliente();
-			principalCliente.dispose();
-		}
-
-		if (src == alterar) {
-			new TelaAlteraCliente();
 			principalCliente.dispose();
 		}
 		

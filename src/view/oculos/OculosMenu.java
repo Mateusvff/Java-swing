@@ -16,7 +16,6 @@ public class OculosMenu implements ActionListener {
 	private static JButton voltar = new JButton("voltar");
 	private static JButton cadastrar = new JButton("Cadastrar");
 	private static JButton visualizar = new JButton("Visualizar");
-	private static JButton alterar = new JButton("Alterar");
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 
@@ -27,26 +26,23 @@ public class OculosMenu implements ActionListener {
 		principalProdutos.add(titulo);
 		principalProdutos.add(cadastrar);
 		principalProdutos.add(visualizar);
-		principalProdutos.add(alterar);
 		principalProdutos.add(deletar);
 		principalProdutos.add(buscar);
 		principalProdutos.add(voltar);
 
 		cadastrar.setBounds(140, 50, 100, 30);
 		visualizar.setBounds(140, 100, 100, 30);
-		alterar.setBounds(140, 150, 100, 30);
-		deletar.setBounds(140, 200, 100, 30);
-		buscar.setBounds(140, 250, 100, 30);
-		voltar.setBounds(10,270, 70, 25);
+		deletar.setBounds(140, 150, 100, 30);
+		buscar.setBounds(140, 200, 100, 30);
+		voltar.setBounds(10, 230, 70, 25);
 
 		principalProdutos.setLayout(null);
 
-		principalProdutos.setSize(400, 350);
+		principalProdutos.setSize(400, 300);
 		principalProdutos.setVisible(true);
 
 		cadastrar.addActionListener(this);
 		visualizar.addActionListener(this);
-		alterar.addActionListener(this);
 		deletar.addActionListener(this);
 		buscar.addActionListener(this);
 		voltar.addActionListener(this);
@@ -63,11 +59,6 @@ public class OculosMenu implements ActionListener {
 
 		if (src == visualizar) {
 			new TelaVisualizaOculos();
-			principalProdutos.dispose();
-		}
-
-		if (src == alterar) {
-			new TelaAlteraOculos();
 			principalProdutos.dispose();
 		}
 
