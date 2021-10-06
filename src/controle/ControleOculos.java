@@ -3,6 +3,8 @@ package controle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.JTextField;
+
 import modelo.produtos.Oculos;
 
 public class ControleOculos {
@@ -18,13 +20,14 @@ public class ControleOculos {
 	}
 
 	// BUSCAR OCULOS
-	public String buscarOds(String codigoBusca) {
+	public String buscarOculos(int idBusca) {
 
 		for (int i = 0; i < oculosProd.size(); i++) {
-			if (oculosProd.get(i).getMarca().equals(codigoBusca)) {
+			if (oculosProd.get(i).getMarca().equals(idBusca)) {
 				return oculosProd.get(i).toString();
 			}
 		}
+		
 		return "Óculos de sol não encontrado ! ";
 	}
 
@@ -36,9 +39,9 @@ public class ControleOculos {
 	}
 
 	// DELETAR OCULOS
-	public void deletarOds(String codigoBusca) {
+	public void deletarOculos(JTextField idBusca) {
 		for (int i = 0; i < oculosProd.size(); i++) {
-			if (oculosProd.get(i).getMarca().equals(codigoBusca)) {
+			if (oculosProd.get(i).getMarca().equals(idBusca)) {
 				oculosProd.remove(i);
 			}
 		}

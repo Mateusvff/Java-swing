@@ -56,21 +56,22 @@ public class TelaBuscaVendedor {
 		
 		panel.add(listaVendedor);
 		
-		JButton registerButton = new JButton("Buscar");
-		registerButton.setBounds(250, 10, 100, 25);
-		panel.add(registerButton);
+		JButton buscaButton = new JButton("Buscar");
+		buscaButton.setBounds(250, 10, 100, 25);
+		panel.add(buscaButton);
 		
-		registerButton.addActionListener(new ActionListener() {
+		buscaButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
-
+				
 				String cpf = cpfBusca.getText();
 
-				ControleVendedor controleVendedor = new ControleVendedor();
-				Vendedor retorno = controleVendedor.buscarVendedor(cpf);
+				ControleVendedor controleVendedor = new ControleVendedor();  //INSTÂNCIA DA CLASSE CONTROLEVENDEDOR PARA INICIALIZAR UM OBJETO DA CLASSE - MÉTODO BUSCARVENDEDOR
+				Vendedor retorno = controleVendedor.buscarVendedor(cpf);  //CHAMOU O MÉTODO. O MÉTODO RETORNOU UM OBJETO PRA ELE. GUARDOU O OBJETO EM UMA VARIÁVEL DO TIPO OBJETO
 				
-				listModel.addElement(retorno.getNome() + " - " + retorno.getCpf());
+				listModel.addElement(retorno.getNome() + " - " + retorno.getCpf() + " - " + retorno.getTelefone() + 
+						     " - " + retorno.getEmail() + " - " + retorno.getCidade() + " - " + retorno.getSalario() + 
+						     " - " + retorno.getQuantVendida());
 			
 			}
 

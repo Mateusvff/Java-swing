@@ -49,27 +49,27 @@ public class TelaApagaVendedor {
 		cpfApaga.setBounds(110, 10, 100, 25);
 		panel.add(cpfApaga);
 
-		JButton registerButton = new JButton("Apagar");
-		registerButton.setBounds(250, 10, 100, 25);
-		panel.add(registerButton);
+		JButton apagarButton = new JButton("Apagar");
+		apagarButton.setBounds(250, 10, 100, 25);
+		panel.add(apagarButton);
 		
-		JButton voltar = new JButton("Cancelar");
-		voltar.setBounds(10, 50, 85, 25);
-		panel.add(voltar);
+		JButton voltarButton = new JButton("Cancelar");
+		voltarButton.setBounds(10, 50, 85, 25);
+		panel.add(voltarButton);
 
-		voltar.addActionListener(new ActionListener() {
+		voltarButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 
-				if (src == voltar) {
+				if (src == voltarButton) {
 					new VendedorMenu();
 					frame.dispose();
 				}
 			}
 		});
 
-		registerButton.addActionListener(new ActionListener() {
+		apagarButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

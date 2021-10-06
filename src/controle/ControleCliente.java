@@ -28,6 +28,7 @@ public class ControleCliente {
 		return "Usuário não encontrado ! ";
 	}
 
+	
 	// VISUALIZAR CLIENTES
 	public void verClientes() {
 		for (int i = 0; i < clientes.size(); i++) {

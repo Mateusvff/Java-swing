@@ -2,14 +2,16 @@ package view.oculos;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.text.MaskFormatter;
+import javax.swing.JTextField;
+
+import controle.ControleOculos;
+import view.Principal;
 
 public class TelaApagaOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -26,46 +28,49 @@ public class TelaApagaOculos {
 
 	private void placeComponents(JPanel panel) {
 	panel.setLayout(null);
-		
-		MaskFormatter mascaraId = null;
-
-		try {
-			mascaraId = new MaskFormatter("#####");
-		} catch (ParseException e1) {
-
-			System.err.println("Erro na formatação" + e1.getMessage());
-			e1.printStackTrace();
-		}
-		
+				
 		JLabel instrucao = new JLabel("Digite o ID ");
 		instrucao.setBounds(20, 10, 80, 25);
 		panel.add(instrucao);
 
-		JFormattedTextField idApaga = new JFormattedTextField(mascaraId);
-		idApaga.setBounds(110, 10, 100, 25);
-		panel.add(idApaga);
+		JTextField idBusca = new JTextField(5);
+		idBusca.setBounds(110, 10, 100, 25);
+		panel.add(idBusca);
 		
-		JButton registerButton = new JButton("Apagar");
-		registerButton.setBounds(250, 10, 100, 25);
-		panel.add(registerButton);
-		
-		JButton apagarButton = new JButton("Cancelar");
-		apagarButton.setBounds(10, 50, 85, 25);
+		JButton apagarButton = new JButton("Apagar");
+		apagarButton.setBounds(250, 10, 100, 25);
 		panel.add(apagarButton);
+
+		JButton cancelarButton = new JButton("Cancelar");
+		cancelarButton.setBounds(10, 50, 85, 25);
+		panel.add(cancelarButton);
 
 		apagarButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				ControleOculos controleOculos = new ControleOculos();
+				controleOculos.deletarOculos(idBusca);
+
+				JOptionPane.showMessageDialog(null, "Produto excluído!");
+
+				new Principal();
+
+				frame.dispose();
+			}
+		});
+
+		cancelarButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 
-				if (src == apagarButton) {
+				if (src == cancelarButton) {
 					new OculosMenu();
 					frame.dispose();
 				}
+
 			}
 		});
-		
-		
 	}
-	
+
 }

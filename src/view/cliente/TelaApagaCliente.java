@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
-import view.Principal;
 
 public class TelaApagaCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");
@@ -75,15 +74,13 @@ public class TelaApagaCliente {
 		
 		registerButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				ControleCliente controleCliente = new ControleCliente();
 				controleCliente.deletarClientes(cpfApaga);
 				
 				JOptionPane.showMessageDialog(null, "Cliente excluído");
 
-				new Principal();
-
+				new ClienteMenu();
 				frame.dispose();
 			}
 		});

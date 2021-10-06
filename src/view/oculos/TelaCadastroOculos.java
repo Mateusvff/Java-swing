@@ -95,19 +95,18 @@ public class TelaCadastroOculos {
 		generoText.setBounds(140, 220, 180, 25);
 		panel.add(generoText);
 
-		JButton registerButton = new JButton("Cadastrar");
-		registerButton.setBounds(140, 260, 90, 25);
-		panel.add(registerButton);
+		JButton cadastroButton = new JButton("Cadastrar");
+		cadastroButton.setBounds(140, 260, 90, 25);
+		panel.add(cadastroButton);
 
 		JButton cancelarButton = new JButton("Cancelar");
 		cancelarButton.setBounds(235, 260, 85, 25);
 		panel.add(cancelarButton);
 
-		registerButton.addActionListener(new ActionListener() {
+		cadastroButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
 				
 				int id = Integer.parseInt(idText.getText());
 				String marca = marcaText.getText();

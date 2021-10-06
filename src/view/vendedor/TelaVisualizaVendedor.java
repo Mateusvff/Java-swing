@@ -21,8 +21,7 @@ public class TelaVisualizaVendedor {
 		frame.add(panel);
 		placeComponents(panel);
 		frame.setVisible(true);
-		
-		label.setBounds(10, 10, 150, 30);	
+		label.setBounds(10, 10, 150, 30);
 	}
 
 	private void placeComponents(JPanel panel) {
@@ -34,7 +33,7 @@ public class TelaVisualizaVendedor {
 				listaVendedor.addElement("Nome: " + vendedor.getNome() + " - " + "CPF: " + vendedor.getCpf());
 			}
 		}
-		
+
 		JList<String> jList = new JList<>(listaVendedor);
 		jList.setBounds(0,0,400,280);
 		
