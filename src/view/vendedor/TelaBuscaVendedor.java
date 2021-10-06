@@ -66,17 +66,17 @@ public class TelaBuscaVendedor {
 				
 				String cpf = cpfBusca.getText();
 
-				ControleVendedor controleVendedor = new ControleVendedor();  //INSTÂNCIA DA CLASSE CONTROLEVENDEDOR PARA INICIALIZAR UM OBJETO DA CLASSE - MÉTODO BUSCARVENDEDOR
-				Vendedor retorno = controleVendedor.buscarVendedor(cpf);  //CHAMOU O MÉTODO. O MÉTODO RETORNOU UM OBJETO PRA ELE. GUARDOU O OBJETO EM UMA VARIÁVEL DO TIPO OBJETO
+				ControleVendedor controleVendedor = new ControleVendedor();  
+				Vendedor retorno = controleVendedor.buscarVendedor(cpf); 
 				
 				listModel.addElement(retorno.getNome() + " - " + retorno.getCpf() + " - " + retorno.getTelefone() + 
 						     " - " + retorno.getEmail() + " - " + retorno.getCidade() + " - " + retorno.getSalario() + 
 						     " - " + retorno.getQuantVendida());
 			
 			}
-
+			
 		});
-
+		
 	}
 
 }

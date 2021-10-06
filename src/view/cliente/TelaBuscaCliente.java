@@ -4,18 +4,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
+import modelo.pessoas.Cliente;
 import view.Principal;
 
 public class TelaBuscaCliente{
 	private static JFrame frame = new JFrame("Loja de Óculos");
+	private DefaultListModel<String> listModel = new DefaultListModel<>();
 
 	public TelaBuscaCliente() {
 		frame.setSize(400, 280);
@@ -48,37 +52,43 @@ public class TelaBuscaCliente{
 		cpfBusca.setBounds(110, 10, 100, 25);
 		panel.add(cpfBusca);
 
-		JButton registerButton = new JButton("Buscar");
-		registerButton.setBounds(250, 10, 100, 25);
-		panel.add(registerButton);
+		JButton buscaButton = new JButton("Buscar");
+		buscaButton.setBounds(250, 10, 85, 25);
+		panel.add(buscaButton);
 
-		JButton alterarButton = new JButton("Cancelar");
-		alterarButton.setBounds(10, 50, 85, 25);
-		panel.add(alterarButton);
+		JButton cancelarButton = new JButton("Cancelar");
+		cancelarButton.setBounds(250, 45, 85, 25);
+		panel.add(cancelarButton);
+		
+		JLabel texto = new JLabel("Clientes encontrados");
+		texto.setBounds(10, 55, 200, 25);
+		panel.add(texto);
 
-		alterarButton.addActionListener(new ActionListener() {
+		JList<String> listaClientes = new JList<>(listModel);
+		listaClientes.setBounds(10, 80, 365, 155);
+		panel.add(listaClientes);
+		
+		cancelarButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 
-				if (src == alterarButton) {
+				if (src == cancelarButton) {
 					new ClienteMenu();
 					frame.dispose();
 				}
 			}
 		});
 		
-		registerButton.addActionListener(new ActionListener() {
+		buscaButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				String cpf = cpfBusca.getText();
-
 				ControleCliente controleCliente = new ControleCliente();
-				String retorno = controleCliente.buscarClientes(cpf);
+				Cliente retorno = controleCliente.buscarClientes1(cpfBusca.getText());
 				
-				System.out.println(retorno);
+				listModel.addElement(retorno.getNome() + " - " + retorno.getTelefone() + " - " + retorno.getCpf() + 
+					     " - " + retorno.getCidade() + " - " + retorno.getEmail());
 				
 				new Principal();
 

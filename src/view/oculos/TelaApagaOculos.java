@@ -17,7 +17,7 @@ public class TelaApagaOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
 	public TelaApagaOculos() {
-		frame.setSize(400, 280);
+		frame.setSize(400, 130);
 
 		JPanel panel = new JPanel();
 		frame.add(panel);
@@ -34,28 +34,34 @@ public class TelaApagaOculos {
 		panel.add(instrucao);
 
 		JTextField idBusca = new JTextField(5);
-		idBusca.setBounds(110, 10, 100, 25);
+		idBusca.setBounds(110, 10, 85, 25);
 		panel.add(idBusca);
 		
 		JButton apagarButton = new JButton("Apagar");
-		apagarButton.setBounds(250, 10, 100, 25);
+		apagarButton.setBounds(10, 50, 85, 25);
 		panel.add(apagarButton);
 
 		JButton cancelarButton = new JButton("Cancelar");
-		cancelarButton.setBounds(10, 50, 85, 25);
+		cancelarButton.setBounds(110, 50, 85, 25);
 		panel.add(cancelarButton);
 
 		apagarButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				ControleOculos controleOculos = new ControleOculos();
-				controleOculos.deletarOculos(idBusca);
+				try {
+					int produtoID = Integer.parseInt(idBusca.getText());
+					
+					ControleOculos controleOculos = new ControleOculos();
+					controleOculos.deletarOculos(produtoID);
 
-				JOptionPane.showMessageDialog(null, "Produto excluído!");
+					JOptionPane.showMessageDialog(null, "Produto excluído!");
 
-				new Principal();
+					new Principal();
 
-				frame.dispose();
+					frame.dispose();
+				} catch (NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "ID Inválido");
+				}
 			}
 		});
 
@@ -68,7 +74,6 @@ public class TelaApagaOculos {
 					new OculosMenu();
 					frame.dispose();
 				}
-
 			}
 		});
 	}

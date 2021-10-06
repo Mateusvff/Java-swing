@@ -2,17 +2,20 @@ package view.fornecedor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.text.MaskFormatter;
+import controle.ControleFornecedor;
+import modelo.pessoas.Fornecedor;
 
 public class TelaVisualizaFornecedor {
-	private static JFrame frame = new JFrame("Loja de Óculos");
+	private JFrame frame = new JFrame("Loja de Óculos");
+	private DefaultListModel<String> listaFornecedores = new DefaultListModel<>();
+	private JLabel label = new JLabel("Ainda não há fornecedores cadastrados na loja");
+	private JButton voltar = new JButton("Voltar");
 
 	public TelaVisualizaFornecedor() {
 		frame.setSize(400, 280);
@@ -20,38 +23,21 @@ public class TelaVisualizaFornecedor {
 		JPanel panel = new JPanel();
 		frame.add(panel);
 		placeComponents(panel);
-
 		frame.setVisible(true);
+
+		label.setBounds(10, 10, 150, 30);
+		
 	}
 
 	private void placeComponents(JPanel panel) {
-		panel.setLayout(null);
-
-		MaskFormatter mascaraCnpj = null;
-
-		try {
-			mascaraCnpj = new MaskFormatter("##.###.###/0001-##");
-		} catch (ParseException e1) {
-
-			System.err.println("Erro na formatação" + e1.getMessage());
-			e1.printStackTrace();
+		if (ControleFornecedor.fornecedores.isEmpty()) {
+			panel.add(label);
+		} else {
+			for (int i = 0; i < ControleFornecedor.fornecedores.size(); i++) {
+				Fornecedor fornecedores = ControleFornecedor.fornecedores.get(i);
+				listaFornecedores.addElement("Nome: " + fornecedores.getNome() + " - " + "CNPJ: " + fornecedores.getCnpj());
+			}
 		}
-
-		JLabel instrucao = new JLabel("Digite o CNPJ ");
-		instrucao.setBounds(20, 10, 120, 25);
-		panel.add(instrucao);
-
-		JFormattedTextField cnpjVisualiza = new JFormattedTextField(mascaraCnpj);
-		cnpjVisualiza.setBounds(130, 10, 150, 25);
-		panel.add(cnpjVisualiza);
-
-		JButton registerButton = new JButton("Visualizar");
-		registerButton.setBounds(290, 10, 90, 25);
-		panel.add(registerButton);
-		
-		JButton voltar = new JButton("Cancelar");
-		voltar.setBounds(10, 50, 85, 25);
-		panel.add(voltar);
 
 		voltar.addActionListener(new ActionListener() {
 
@@ -64,6 +50,11 @@ public class TelaVisualizaFornecedor {
 				}
 			}
 		});
-	}
 
+		JList<String> jList = new JList<>(listaFornecedores);
+		jList.setBounds(0, 0, 400, 280);
+
+		panel.add(jList);
+		panel.add(voltar);
+	}
 }

@@ -131,6 +131,7 @@ public class TelaCadastroFornecedor {
 				JOptionPane.showMessageDialog(null, "Cadastro realizado");
 
 				new Principal();
+				frame.dispose();
 			}
 		});
 	}

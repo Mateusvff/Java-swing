@@ -36,8 +36,8 @@ public class TelaVisualizaOculos {
 		} else {
 			for (int i = 0; i < ControleOculos.oculosProd.size(); i++) {
 				Oculos oculos = ControleOculos.oculosProd.get(i);
-				listaOculos.addElement("Id: " + oculos.getId() +  " - " + "Modelo: " + oculos.getModelo() + 
-						               " - " + "Marca: " + oculos.getMarca() +  " - " + "Preço: " + oculos.getPreco());
+				listaOculos.addElement("Id: " + oculos.getId() + " - " + "Modelo: " + oculos.getModelo() + " - "
+						+ "Marca: " + oculos.getMarca() + " - " + "Preço: " + oculos.getPreco());
 			}
 		}
 		

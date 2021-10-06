@@ -3,8 +3,6 @@ package controle;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JFormattedTextField;
-
 import modelo.pessoas.Cliente;
 
 public class ControleCliente {
@@ -27,6 +25,15 @@ public class ControleCliente {
 		}
 		return "Usuário não encontrado ! ";
 	}
+	
+	public Cliente buscarClientes1(String cpfBusca) {
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).getCpf().equals(cpfBusca)) {
+				return clientes.get(i);
+			}
+		}
+		return null;
+	}
 
 	
 	// VISUALIZAR CLIENTES
@@ -37,7 +44,7 @@ public class ControleCliente {
 	}
 
 	// DELETAR CLIENTES
-	public void deletarClientes(JFormattedTextField cpfDelete) {
+	public void deletarClientes(String cpfDelete) {
 		for (int i = 0; i < clientes.size(); i++) {
 			if (clientes.get(i).getCpf().equals(cpfDelete)) {
 				clientes.remove(i);

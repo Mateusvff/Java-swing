@@ -26,6 +26,16 @@ public class ControleFornecedor {
 		}
 		return "Fornecedor não encontrado ! ";
 	}
+	
+	public Fornecedor buscarFornecedor1(String cnpjBusca) {
+
+		for (int i = 0; i < fornecedores.size(); i++) {
+			if (fornecedores.get(i).getCnpj().equals(cnpjBusca)) {
+				return fornecedores.get(i);
+			}
+		}
+		return null;
+	}
 
 	// VISUALIZAR FORNECEDOR
 	public void verFornecedor() {
@@ -35,10 +45,7 @@ public class ControleFornecedor {
 	}
 
 	// DELETAR FORNECEDOR
-	public void deletarFornecedor() {
-		System.out.println("Digite o CNPJ do fornecedor (somente números) à ser apagado: ");
-		String cnpj = sc.next();
-
+	public void deletarFornecedor(String cnpj) {
 		for (int i = 0; i < fornecedores.size(); i++) {
 			if (fornecedores.get(i).getCnpj().equals(cnpj)) {
 				fornecedores.remove(i);

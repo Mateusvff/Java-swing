@@ -13,12 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
+import view.TelaPessoaMenu;
 
 public class TelaApagaCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
 	public TelaApagaCliente() {
-		frame.setSize(400, 280);
+		frame.setSize(400, 130);
 
 		JPanel panel = new JPanel();
 		frame.add(panel);
@@ -46,18 +47,15 @@ public class TelaApagaCliente {
 		panel.add(instrucao);
 
 		JFormattedTextField cpfApaga = new JFormattedTextField(mascaraCpf);
-		cpfApaga.setBounds(110, 10, 100, 25);
+		cpfApaga.setBounds(110, 10, 85, 25);
 		panel.add(cpfApaga);
 		
-		ControleCliente controleCliente = new ControleCliente();
-		controleCliente.deletarClientes(cpfApaga);
-		
-		JButton registerButton = new JButton("Apagar");
-		registerButton.setBounds(250, 10, 100, 25);
-		panel.add(registerButton);
+		JButton apagaButton = new JButton("Apagar");
+		apagaButton.setBounds(10, 50, 85, 25);
+		panel.add(apagaButton);
 		
 		JButton voltar = new JButton("Cancelar");
-		voltar.setBounds(10, 50, 85, 25);
+		voltar.setBounds(110, 50, 85, 25);
 		panel.add(voltar);
 
 		voltar.addActionListener(new ActionListener() {
@@ -72,19 +70,19 @@ public class TelaApagaCliente {
 			}
 		});
 		
-		registerButton.addActionListener(new ActionListener() {
+		apagaButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				ControleCliente controleCliente = new ControleCliente();
-				controleCliente.deletarClientes(cpfApaga);
-				
-				JOptionPane.showMessageDialog(null, "Cliente excluído");
+					
+					ControleCliente controleCliente = new ControleCliente();
+					controleCliente.deletarClientes(cpfApaga.getText());
+					frame.dispose();
 
-				new ClienteMenu();
-				frame.dispose();
+					JOptionPane.showMessageDialog(null, "Cliente excluído!");
+					new TelaPessoaMenu();		
 			}
+			
 		});
-		
 		
 	}
 }
