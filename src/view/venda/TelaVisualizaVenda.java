@@ -35,7 +35,6 @@ public class TelaVisualizaVenda {
 			}
 		}
 
-
 		JList<String> jList = new JList<>(listaVendas);
 		jList.setBounds(0, 0, 400, 280);
 
