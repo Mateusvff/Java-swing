@@ -1,5 +1,10 @@
 package modelo.pessoas;
 
+/**
+ * Herda da classe Pessoa e define os atributos dos vendedores
+ * @author Mateus Vinícius
+ * @version 1.0 (Out 2021)
+ */
 public class Vendedor extends Pessoa {
 	private double salario;
 

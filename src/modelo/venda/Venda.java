@@ -2,6 +2,12 @@ package modelo.venda;
 
 import modelo.produtos.Oculos;
 
+/**
+ * Define as variáveis asssociadas ás vendas realizadas
+ * @author Mateus Vinícius
+ * @version 1.0 (Out 2021)
+ *
+ */
 public class Venda {
 	private Oculos oculos;
 	private int quantidade;

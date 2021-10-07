@@ -1,5 +1,10 @@
 package modelo.produtos;
 
+/**
+ * Define as variáveis associadas ao produto (Óculos de sol)
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class Oculos {
 	protected String marca;
 	protected String modelo;

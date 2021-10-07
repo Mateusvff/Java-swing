@@ -1,5 +1,13 @@
 package modelo.pessoas;
 
+/**
+ * Classe abstrata, herdada pelas classes:
+ * (1) Cliente
+ * (2) Vendedor
+ * @author Mateus Vinícius
+ * @version 1.0 (Out 2021)
+ *
+ */
 public abstract class Pessoa {
 	protected String nome;
 	protected String telefone;
@@ -14,6 +22,7 @@ public abstract class Pessoa {
 		this.email = email;
 	}
 
+	
 	public String getNome() {
 		return nome;
 	}

@@ -1,5 +1,10 @@
 package modelo.pessoas;
 
+/**
+ * Herda da classe Pessoa e define os atributos dos fornecedores
+ * @author Mateus Vinícius
+ * @version 1.0 (Out 2021)
+ */
 public class Fornecedor {
 	private String nome;
 	private String cnpj;
@@ -24,7 +29,8 @@ public class Fornecedor {
 				"Cidade" + cidade + "\n" +
 				"Email: " + email + "\n";
 	}
-
+	
+	
 	public String getNome() {
 		return nome;
 	}
