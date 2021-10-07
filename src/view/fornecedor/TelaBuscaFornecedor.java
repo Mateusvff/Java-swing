@@ -16,6 +16,11 @@ import controle.ControleFornecedor;
 import modelo.pessoas.Fornecedor;
 import principal.Principal;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaBuscaFornecedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -35,6 +40,12 @@ public class TelaBuscaFornecedor {
 
 		MaskFormatter mascaraCnpj = null;
 
+		/**
+		 * Adiciona uma máscara de CNPJ ao campo de preenchimento
+		 * Limita o número de caracteres a serem inseridos
+		 * @author Mateus Vinícius
+		 * @version 1.0 (Out 2021)
+		 */
 		try {
 			mascaraCnpj = new MaskFormatter("##.###.###/0001-##");
 		} catch (ParseException e1) {
@@ -81,6 +92,12 @@ public class TelaBuscaFornecedor {
 		
 		buscaButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Realiza o método de busca dos fornecedores a partir do click do botão
+			 * @param e monitora a ação realizada no botão
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 				
 				ControleFornecedor controleFornecedor = new ControleFornecedor();

@@ -18,6 +18,11 @@ import principal.Principal;
 public class TelaCadastroFornecedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
+	/**
+	 * Cria e configura o tamanho do frame de exibição
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public TelaCadastroFornecedor() {
 		frame.setSize(400, 280);
 
@@ -28,6 +33,11 @@ public class TelaCadastroFornecedor {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Cria o painel de exibição dos componentes
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public static void main(String[] args) {
 		frame.setSize(400, 280);
 
@@ -45,6 +55,12 @@ public class TelaCadastroFornecedor {
 		MaskFormatter mascaraTel = null;
 		MaskFormatter mascaraCnpj = null;
 
+		/**
+		 * Adiciona uma máscara de CNPJ ao campo de preenchimento
+		 * Limita o número de caracteres a serem inseridos
+		 * @author Mateus Vinícius
+		 * @version 1.0 (Out 2021)
+		 */
 		try {
 			mascaraTel = new MaskFormatter("(##)#####-####");
 			mascaraCnpj = new MaskFormatter("##.###.###/0001-##");
@@ -117,6 +133,12 @@ public class TelaCadastroFornecedor {
 
 		registerButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Puxa os dados preenchidos na tela e aciona o método de cadastro de fornecedores
+			 * @param e monitora a ação realizada no botão
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String nome = nomeText.getText();

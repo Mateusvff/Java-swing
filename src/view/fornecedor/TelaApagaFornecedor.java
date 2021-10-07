@@ -15,6 +15,11 @@ import javax.swing.text.MaskFormatter;
 import controle.ControleFornecedor;
 import view.TelaPessoaMenu;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaApagaFornecedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
@@ -33,6 +38,12 @@ public class TelaApagaFornecedor {
 
 		MaskFormatter mascaraCnpj = null;
 
+		/**
+		 * Adiciona uma máscara de CNPJ ao campo de preenchimento
+		 * Limita o número de caracteres a serem inseridos
+		 * @author Mateus Vinícius
+		 * @version 1.0 (Out 2021)
+		 */
 		try {
 			mascaraCnpj = new MaskFormatter("##.###.###/0001-##");
 		} catch (ParseException e1) {
@@ -59,6 +70,11 @@ public class TelaApagaFornecedor {
 
 		apagaButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Realiza o método de deleção de fornecedor
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 				ControleFornecedor controleFornecedor = new ControleFornecedor();
 				controleFornecedor.deletarFornecedor(cnpjApaga.getText());
@@ -72,6 +88,11 @@ public class TelaApagaFornecedor {
 		
 		voltar.addActionListener(new ActionListener() {
 
+			/**
+			 * Retorna para o menu anterior ao clickar no botão
+			 * @author Juan Cerqueira
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 				Object src = e.getSource();
 

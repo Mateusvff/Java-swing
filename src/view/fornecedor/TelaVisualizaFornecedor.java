@@ -11,6 +11,11 @@ import javax.swing.JPanel;
 import controle.ControleFornecedor;
 import modelo.pessoas.Fornecedor;
 
+/**
+ * Cria e configura o tamanho do frame de exibição, do botão, label e painel
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaVisualizaFornecedor {
 	private JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listaFornecedores = new DefaultListModel<>();
@@ -29,6 +34,12 @@ public class TelaVisualizaFornecedor {
 		
 	}
 
+	/**
+	 * Puxa os dados da lista de fornecedores cadastrado e apresenta na tela por meio do JPanel
+	 * @param panel painel que contém os fornecedores listados
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		if (ControleFornecedor.fornecedores.isEmpty()) {
 			panel.add(label);
