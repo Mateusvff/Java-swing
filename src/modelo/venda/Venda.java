@@ -1,60 +1,59 @@
 package modelo.venda;
 
-import modelo.pessoas.Vendedor;
 import modelo.produtos.Oculos;
 
 public class Venda {
-	private Oculos produto;
-	private Vendedor vendedor;
-	private int quantVendida;
-	private double valorVenda;
+	private Oculos oculos;
+	private String vendedor;
+	private int quantidade;
+	private double valor;
 
-	public Venda(Vendedor vendedor, Oculos produto, int quantVendida, double valorVenda) {
-		this.produto = produto;
+	public Venda(String vendedor, Oculos oculos, int quantidade, double valor) {
+		this.oculos = oculos;
 		this.vendedor = vendedor;
-		this.quantVendida = quantVendida;
-		this.valorVenda = valorVenda;
+		this.quantidade = quantidade;
+		this.valor = valor;
 	}
 
 	@Override
 	public String toString() {
 		return "Dados da venda: " + "\n" + 
-				"Produto: " + produto + "\n" +
+				"Produto: " + oculos + "\n" +
 				"Vendedor: " + vendedor + "\n" +
-				"Quantidade vendida: " + quantVendida + "\n" +
-				"Valor da venda: " + valorVenda;
+				"Quantidade vendida: " + quantidade + "\n" +
+				"Valor da venda: " + valor;
 	}
 
-	public Vendedor getVendedor() {
+	public String getVendedor() {
 		return vendedor;
 	}
 
-	public void setVendedor(Vendedor vendedor) {
+	public void setVendedor(String vendedor) {
 		this.vendedor = vendedor;
 	}
 
-	public Oculos getProduto() {
-		return produto;
+	public Oculos getOculos() {
+		return oculos;
 	}
 
-	public void setProduto(Oculos produto) {
-		this.produto = produto;
+	public void setOculos(Oculos produto) {
+		this.oculos = produto;
 	}
 
-	public int getQuantVendida() {
-		return quantVendida;
+	public int getQuantidade() {
+		return quantidade;
 	}
 
-	public void setQuantVendida(int quantVendida) {
-		this.quantVendida = quantVendida;
+	public void setQuantidade(int quantVendida) {
+		this.quantidade = quantVendida;
 	}
 
-	public double getValorVenda() {
-		return valorVenda;
+	public double getValor() {
+		return valor;
 	}
 
-	public void setValorVenda(double valorVenda) {
-		this.valorVenda = valorVenda;
+	public void setValor(double valorVenda) {
+		this.valor = valorVenda;
 	}
 
 }
