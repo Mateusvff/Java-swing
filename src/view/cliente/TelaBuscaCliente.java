@@ -17,6 +17,11 @@ import controle.ControleCliente;
 import modelo.pessoas.Cliente;
 import principal.Principal;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaBuscaCliente{
 	private static JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -31,11 +36,26 @@ public class TelaBuscaCliente{
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Adiciona um painel com um campo de preenchimento para o CPF,
+	 * botão com opção de voltar para o menu anterior,
+	 * botão para realizar a pesquisa
+	 * @param panel painél que contém o campo de preenchimento e botões
+	 * @param listaClientes lista que contém os clientes encontrados a partir da pesquisa
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		panel.setLayout(null);
 		
 		MaskFormatter mascaraCpf = null;
 
+		/**
+		 * Adiciona uma máscara de CPF ao campo de preenchimento
+		 * Limita o número de caracteres a serem inseridos
+		 * @author Mateus Vinícius
+		 * @version 1.0 (Out 2021)
+		 */
 		try {
 			mascaraCpf = new MaskFormatter("###.###.###-##");
 		} catch (ParseException e1) {
@@ -82,6 +102,12 @@ public class TelaBuscaCliente{
 		
 		buscaButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Realiza o método de busca dos clientes a partir do click do botão
+			 * @param e monitora a ação realizada no botão
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 
 				ControleCliente controleCliente = new ControleCliente();

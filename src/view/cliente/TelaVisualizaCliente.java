@@ -13,6 +13,11 @@ import javax.swing.JPanel;
 import controle.ControleCliente;
 import modelo.pessoas.Cliente;
 
+/**
+ * Cria e configura o tamanho do frame de exibição, do botão, label e painel
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaVisualizaCliente {
 	private JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listaClientes = new DefaultListModel<>();
@@ -31,6 +36,12 @@ public class TelaVisualizaCliente {
 		
 	}
 
+	/**
+	 * Puxa os dados da lista de clientes cadastrado e apresenta na tela por meio do JPanel
+	 * @param panel painel que contém os clientes listados
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		if (ControleCliente.clientes.isEmpty()) {
 			panel.add(label);

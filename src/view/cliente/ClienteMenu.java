@@ -8,6 +8,11 @@ import javax.swing.*;
 
 import view.TelaPessoaMenu;
 
+/**
+ * Exibe as opções referentes aos clientes da loja
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class ClienteMenu implements ActionListener {
 	private static JFrame principalCliente = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Clientes");
@@ -17,6 +22,12 @@ public class ClienteMenu implements ActionListener {
 	private static JButton buscar = new JButton("Buscar");
 	private static JButton voltar = new JButton("Voltar");
 	
+	/**
+	 * Define o tamanho e posição dos botões e do frame
+	 * Implementa o ActionListener para que os botões possam reconhecer o click
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public ClienteMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(155, 10, 150, 30);
@@ -46,6 +57,11 @@ public class ClienteMenu implements ActionListener {
 		voltar.addActionListener(this);
 	}
 
+	/**
+	 * Redireciona o usuário para a tela desejada
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();

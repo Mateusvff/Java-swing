@@ -17,6 +17,11 @@ import view.TelaPessoaMenu;
 import view.oculos.OculosMenu;
 import view.venda.VendaMenu;
 
+/**
+ * Inicia o sistema e exibe o menu principal com todas as funcionalidades
+ * @author Mateus Vinícius
+ * @version 1.0 (Out 2021)
+ */
 public class Principal implements ActionListener {
 	private static JFrame principal = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Menu Principal");
@@ -24,6 +29,11 @@ public class Principal implements ActionListener {
 	private static JButton pessoas = new JButton("Pessoas");
 	private static JButton vendas = new JButton("Vendas");
 	
+	/**
+	 * Define o tamanho e posição dos botões e do frame
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public Principal() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
@@ -42,6 +52,11 @@ public class Principal implements ActionListener {
 		principal.setVisible(true);
 	}
 
+	/**
+	 * Implementa o ActionListener nos botões para que eles possam detectar o click
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public static void main(String[] args) {
 		
 		Principal menu = new Principal(); 
@@ -66,6 +81,11 @@ public class Principal implements ActionListener {
 		controleVenda.dados();
 	}
 	
+	/**
+	 * Redireciona o usuário para a tela da função desejada
+	 * @author Juan Cerqueira
+	 * @version (Out 2021)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		

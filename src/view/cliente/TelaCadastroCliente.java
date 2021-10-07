@@ -19,6 +19,11 @@ import principal.Principal;
 public class TelaCadastroCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
+	/**
+	 * Cria e configura o tamanho do frame de exibição
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public TelaCadastroCliente() {
 		frame.setSize(400, 280);
 
@@ -29,6 +34,12 @@ public class TelaCadastroCliente {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Adiciona o painel e os componentes ao frame
+	 * @author Juan Cerqueira
+	 * @param panel painel que contém os componentes da tela
+	 * @version 1.0 (Out 2021)
+	 */
 	private static void placeComponents(JPanel panel) {
 
 		panel.setLayout(null);
@@ -36,6 +47,12 @@ public class TelaCadastroCliente {
 		MaskFormatter mascaraCpf = null;
 		MaskFormatter mascaraTel = null;
 
+		/**
+		 * Adiciona uma máscara de CPF ao campo de preenchimento
+		 * Limita o número de caracteres a serem inseridos
+		 * @author Mateus Vinícius
+		 * @version 1.0 (Out 2021)
+		 */
 		try {
 			mascaraCpf = new MaskFormatter("###.###.###-##");
 			mascaraTel = new MaskFormatter("(##) #####-####");
@@ -108,6 +125,12 @@ public class TelaCadastroCliente {
 		
 		registerButton.addActionListener(new ActionListener() {
 			
+			/**
+			 * Puxa os dados preenchidos na tela e aciona o método de cadastro de clientes
+			 * @param e monitora a ação realizada no botão
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String nome = nomeText.getText();

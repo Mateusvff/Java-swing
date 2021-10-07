@@ -10,7 +10,14 @@ import view.cliente.ClienteMenu;
 import view.fornecedor.FornecedorMenu;
 import view.vendedor.VendedorMenu;
 
-
+/**
+ * Exibe as opções referentes ás pessoas, sendo elas:
+ * (1) Vendedores
+ * (2) Clientes
+ * (3) Fornecedores
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaPessoaMenu implements ActionListener {
 	private static JFrame principalPessoa = new JFrame("Loja de Óculos");
 	private static JButton voltar = new JButton("voltar");
@@ -19,6 +26,12 @@ public class TelaPessoaMenu implements ActionListener {
 	private static JButton cliente = new JButton("Clientes");
 	private static JButton fornecedor = new JButton("Fornecedores");
 
+	/**
+	 * Define o tamanho e posição dos botões e do frame
+	 * Implementa o ActionListener para que os botões possam reconhecer o click
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public TelaPessoaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(147, 10, 150, 30);
@@ -45,6 +58,11 @@ public class TelaPessoaMenu implements ActionListener {
 		voltar.addActionListener(this);
 	}
 	
+	/**
+	 * Redireciona o usuário para a tela desejada
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
