@@ -65,4 +65,20 @@ public class ControleVendedor {
 			}
 		}
 	}
+	
+	public void dados() {
+
+		Vendedor vendedor1 = new Vendedor("Ricardo", "61 99999-8888", "114.103.710-69", "ricardo@gmail.com", 2000 );
+		Vendedor vendedor2 = new Vendedor("Jairo", "61 98888-9999", "063.315.680-93", "jairo@gmail.com", 2100);
+		Vendedor vendedor3 = new Vendedor("Arthur", "61 99865-7586", "380.538.330-47", "arthur@gmail.com", 2500);
+		Vendedor vendedor4 = new Vendedor("Cristiano", "61 98563-5632", "429.382.740-41", "cristiano@gmail.com", 1800);
+		Vendedor vendedor5 = new Vendedor("Leonardo", "61 986325478", "661.333.770-62", "leonardo@gmail.com", 1600);
+		
+		vendedores.add(vendedor1);
+		vendedores.add(vendedor2);
+		vendedores.add(vendedor3);
+		vendedores.add(vendedor4);
+		vendedores.add(vendedor5);
+		
+	}
 }

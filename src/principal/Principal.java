@@ -8,6 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import controle.ControleCliente;
+import controle.ControleFornecedor;
+import controle.ControleOculos;
+import controle.ControleVenda;
+import controle.ControleVendedor;
 import view.TelaPessoaMenu;
 import view.oculos.OculosMenu;
 import view.venda.VendaMenu;
@@ -44,6 +49,21 @@ public class Principal implements ActionListener {
 		produtos.addActionListener(menu);
 		pessoas.addActionListener(menu);
 		vendas.addActionListener(menu);
+		
+		ControleCliente controleCliente = new ControleCliente();
+		controleCliente.dados();
+		
+		ControleVendedor controleVendedor = new ControleVendedor();
+		controleVendedor.dados();
+		
+		ControleFornecedor controleFornecedor = new ControleFornecedor();
+		controleFornecedor.dados();
+		
+		ControleOculos controleOculos = new ControleOculos();
+		controleOculos.dados();
+		
+		ControleVenda controleVenda = new ControleVenda();
+		controleVenda.dados();
 	}
 	
 	public void actionPerformed(ActionEvent e) {

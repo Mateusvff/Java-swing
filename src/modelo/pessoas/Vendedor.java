@@ -3,7 +3,7 @@ package modelo.pessoas;
 public class Vendedor extends Pessoa {
 	private double salario;
 
-	public Vendedor(String nome, String telefone, String cpf, String email, double salario) {
+	public Vendedor(String nome,String cpf, String telefone, String email, double salario) {
 		super(nome, telefone, cpf, email);
 		this.salario = salario;
 	}
@@ -12,6 +12,7 @@ public class Vendedor extends Pessoa {
 	public String toString() {
 		return "Dados do vendedor " + "\n" +
 				"Nome: " + nome + "\n" +
+				"Telefone: " + telefone + "\n" +
 				"CPF: " + cpf + "\n" + 
 				"Email: " + email + "\n" +
 				"Salário: " + salario;

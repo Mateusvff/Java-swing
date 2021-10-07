@@ -10,10 +10,10 @@ public class Oculos {
 	protected double preco;
 	protected String genero;
 	
-	public Oculos(String marca, String modelo, int id, String material, String cor, int quantEstoque, double preco, String genero) {
+	public Oculos( int id, String marca, String modelo, String material, String cor, int quantEstoque, double preco, String genero) {
+		this.id = id;
 		this.marca = marca;
 		this.modelo = modelo;
-		this.id = id;
 		this.material = material;
 		this.cor = cor;
 		this.quantEstoque = quantEstoque;

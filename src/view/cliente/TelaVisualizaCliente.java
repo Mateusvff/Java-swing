@@ -36,8 +36,8 @@ public class TelaVisualizaCliente {
 			panel.add(label);
 		} else {
 			for (int i = 0; i < ControleCliente.clientes.size(); i++) {
-				Cliente clientes = ControleCliente.clientes.get(i);
-				listaClientes.addElement("Nome: " + clientes.getNome() +  " - " + "CPF: " + clientes.getCpf());
+				Cliente cliente = ControleCliente.clientes.get(i);
+				listaClientes.addElement("Nome: " + cliente.getNome() +  " - " + "CPF: " + cliente.getCpf());
 			}
 		}
 		
