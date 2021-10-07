@@ -17,17 +17,7 @@ public class TelaCadastroVenda {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
 	public TelaCadastroVenda() {
-		frame.setSize(400, 200);
-
-		JPanel panel = new JPanel();
-		frame.add(panel);
-		placeComponents(panel);
-
-		frame.setVisible(true);
-	}
-	
-	public static void main(String[] args) {
-		frame.setSize(400, 280);
+		frame.setSize(400, 190);
 
 		JPanel panel = new JPanel();
 		frame.add(panel);
@@ -36,7 +26,6 @@ public class TelaCadastroVenda {
 		frame.setVisible(true);
 	}
 
-	//!!!!!! ALTERAR DADOS !!!!!!!!
 	private static void placeComponents(JPanel panel) {
 
 		panel.setLayout(null);
@@ -50,37 +39,32 @@ public class TelaCadastroVenda {
 		panel.add(idText);
 		
 		JLabel quantLabel = new JLabel("Quantidade");
-		quantLabel.setBounds(20, 70, 80, 25);
+		quantLabel.setBounds(20, 40, 80, 25);
 		panel.add(quantLabel);
 		
 		JTextField quantText = new JTextField(20);
-		quantText.setBounds(110, 70, 180, 25);
+		quantText.setBounds(110, 40, 180, 25);
 		panel.add(quantText);
 		
 		JLabel valorLabel = new JLabel("Valor");
-		valorLabel.setBounds(20, 100, 80, 25);
+		valorLabel.setBounds(20, 70, 80, 25);
 		panel.add(valorLabel);
 		
 		JTextField valorText = new JTextField(20);
-		valorText.setBounds(110, 100, 180, 25);
+		valorText.setBounds(110, 70, 180, 25);
 		panel.add(valorText);
 		
-		
 		JButton cadastrarButton = new JButton("Cadastrar");
-		cadastrarButton.setBounds(110, 130, 90, 25);
+		cadastrarButton.setBounds(110, 110, 90, 25);
 		panel.add(cadastrarButton);
 		
 		JButton voltar = new JButton("Cancelar");
-		voltar.setBounds(205, 130, 85, 25);
+		voltar.setBounds(205, 110, 85, 25);
 		panel.add(voltar);
-		
-		
-		
 		
 		cadastrarButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-
 
 				int idCadastro = Integer.parseInt(idText.getText());
 				int quantidade = Integer.parseInt(quantText.getText());
@@ -88,52 +72,19 @@ public class TelaCadastroVenda {
 
 				for (int i = 0; i < ControleOculos.oculosProd.size(); i++) {
 					if (ControleOculos.oculosProd.get(i).getId() == idCadastro) {
-						 Oculos oculos = ControleOculos.oculosProd.get(i);
-						 ControleVenda controleVenda = new ControleVenda();
-						 controleVenda.cadastroVenda(oculos, quantidade, valor);
-						 
-						 System.out.println(oculos);
-						 System.out.println(quantidade);
-						 System.out.println(valor);
+						Oculos oculos = ControleOculos.oculosProd.get(i);
+						ControleVenda controleVenda = new ControleVenda();
+						controleVenda.cadastroVenda(oculos, quantidade, valor);
+
 					}
 				}
 				
+				new VendaMenu();
+				frame.dispose();
 				
-				
-				
-				
-				
-				
-				
-				
-
 			}
 
 		});
-		
-		
-		
-		
-	/*	cadastrarButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String id = idText.getText();
-				String vendedor = vendedorText.getText();
-				String quantidade = quantText.getText();
-				String valor = valorText.getText();
-
-				
-				ControleVenda controleVenda = new ControleVenda();
-				controleVenda.cadastroVenda(vendedor, , quantidade, valor);
-				
-				JOptionPane.showMessageDialog(null, "Cadastro realizado");
-				
-				new Principal();
-				
-				frame.dispose();
-			}
-		}); */
 
 		voltar.addActionListener(new ActionListener() {
 

@@ -15,7 +15,7 @@ import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
 import modelo.pessoas.Cliente;
-import view.Principal;
+import principal.Principal;
 
 public class TelaBuscaCliente{
 	private static JFrame frame = new JFrame("Loja de Óculos");

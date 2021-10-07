@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleVendedor;
-import view.Principal;
+import principal.Principal;
 
 public class TelaApagaVendedor {
 	private JFrame frame = new JFrame("Loja de Óculos");

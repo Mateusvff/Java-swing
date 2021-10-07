@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controle.ControleOculos;
-import view.Principal;
+import principal.Principal;
 
 public class TelaCadastroOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");

@@ -1,4 +1,4 @@
-package view;
+package principal;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import view.TelaPessoaMenu;
 import view.oculos.OculosMenu;
 import view.venda.VendaMenu;
 

@@ -35,14 +35,6 @@ public class ControleCliente {
 		return null;
 	}
 
-	
-	// VISUALIZAR CLIENTES
-	public void verClientes() {
-		for (int i = 0; i < clientes.size(); i++) {
-			System.out.println(clientes.get(i).toString() + "\n");
-		}
-	}
-
 	// DELETAR CLIENTES
 	public void deletarClientes(String cpfDelete) {
 		for (int i = 0; i < clientes.size(); i++) {

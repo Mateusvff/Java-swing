@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
 import controle.ControleCliente;
-import view.Principal;
+import principal.Principal;
 
 public class TelaCadastroCliente {
 	private static JFrame frame = new JFrame("Loja de Óculos");

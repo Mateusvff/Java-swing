@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.text.MaskFormatter;
 import controle.ControleFornecedor;
 import modelo.pessoas.Fornecedor;
-import view.Principal;
+import principal.Principal;
 
 public class TelaBuscaFornecedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");

@@ -39,13 +39,6 @@ public class ControleOculos {
 		return null;
 	}
 
-	// VISUALIZAR OCULOS
-	public void visualizarOculos() {
-		for (int i = 0; i < oculosProd.size(); i++) {
-			System.out.println(oculosProd.get(i).toString() + "\n");
-		}
-	}
-
 	// DELETAR OCULOS
 	public void deletarOculos(int idBusca) {
 		for (int i = 0; i < oculosProd.size(); i++) {

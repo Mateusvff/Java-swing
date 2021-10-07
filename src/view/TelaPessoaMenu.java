@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import principal.Principal;
 import view.cliente.ClienteMenu;
 import view.fornecedor.FornecedorMenu;
 import view.vendedor.VendedorMenu;

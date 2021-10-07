@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 import controle.ControleFornecedor;
-import view.Principal;
+import principal.Principal;
 
 public class TelaCadastroFornecedor {
 	private static JFrame frame = new JFrame("Loja de Óculos");

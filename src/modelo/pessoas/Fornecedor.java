@@ -1,7 +1,6 @@
 package modelo.pessoas;
 
 public class Fornecedor {
-
 	private String nome;
 	private String cnpj;
 	private String telefone;

@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import view.Principal;
+import principal.Principal;
 
 public class OculosMenu implements ActionListener {
 	private static JFrame principalProdutos = new JFrame("Loja de Óculos");
