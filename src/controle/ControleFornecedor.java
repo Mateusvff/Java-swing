@@ -1,22 +1,49 @@
 package controle;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 import modelo.pessoas.Fornecedor;
+
+/**
+ * Realiza a comunicação entre o pacote modelo e o pacote view do fornecedor por meio dos métodos de:
+ * (1) Cadastro
+ * (2) Busca
+ * (3) Visualização
+ * (4) Deleção
+ * @author Mateus Vinícius
+ * @version 1.0 (Out 2021)
+ */
+
 
 public class ControleFornecedor {
 
 	public static List<Fornecedor> fornecedores = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
 
-	// CADASTRAR FORNECEDOR
+	/**
+	 * Realiza o cadastro de um novo fornecedor na lista
+	 * @param nome uma string que contém o nome do fornecedor
+	 * @param cnpj uma string que contém o CNPJ
+	 * @param telefone uma string que contém o número de contato
+	 * @param cidade uma string que contém a cidade em que o fornecedor se encontra
+	 * @param email uma string que contém o endereço eletrônico
+	 * @author Mateus Vinícius
+	 * @version 1.0 (Out 2021)
+	 */
 	public void cadastroFornecedor(String nome, String cnpj, String telefone, String cidade, String email) {
 		Fornecedor fornecedor = new Fornecedor(nome, cnpj, telefone, cidade, email);
 		fornecedores.add(fornecedor);
 	}
 
-	// BUSCAR FORNECEDOR
+	/**
+	 * Realiza a busca de um fornecedor na lista por meio do CNPJ
+	 * @param cnpjBusca uma string que contém o cnpj que será buscado
+	 * @return informa que o fornecedor pesquisado não está cadastrado
+	 * @author Mateus Vinícius
+	 * @version 1.0 (Out 2021)
+	 */
 	public String buscarFornecedor(String cnpjBusca) {
 
 		for (int i = 0; i < fornecedores.size(); i++) {
@@ -27,6 +54,13 @@ public class ControleFornecedor {
 		return "Fornecedor não encontrado ! ";
 	}
 	
+	/**
+	 * Realiza a busca de um fornecedor na lista por meio do CNPJ
+	 * @param cnpjBusca uma string que contém o cnpj que será buscado
+	 * @return puxa os dados do fornecedor pesquisado por meio de uma lista
+	 * @author Mateus Vinícius
+	 * @version 1.0 (Out 2021)
+	 */
 	public Fornecedor buscarFornecedor1(String cnpjBusca) {
 
 		for (int i = 0; i < fornecedores.size(); i++) {
@@ -37,14 +71,23 @@ public class ControleFornecedor {
 		return null;
 	}
 
-	// VISUALIZAR FORNECEDOR
+	/**
+	 * Puxa os dados de fornecedores pré carregados e cadastrados e apresenta em forma de lista
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public void verFornecedor() {
 		for (int i = 0; i < fornecedores.size(); i++) {
 			System.out.println(fornecedores.get(i).toString() + "\n");
 		}
 	}
 
-	// DELETAR FORNECEDOR
+	/**
+	 * Realiza a deleção de um fornecedor da lista a partir do CNPJ digitado
+	 * @param cnpj uma string que contém o CNPJ do fornecedor que será deletado
+	 * @author Mateus Vinícius
+	 * @version 1.0 (Out 2021)
+	 */
 	public void deletarFornecedor(String cnpj) {
 		for (int i = 0; i < fornecedores.size(); i++) {
 			if (fornecedores.get(i).getCnpj().equals(cnpj)) {
@@ -53,6 +96,11 @@ public class ControleFornecedor {
 		}
 	}
 	
+	/**
+	 * Carrega dados de teste na lista de fornecedores
+	 * @author Mateus Vinícius
+	 * @version 1.0 (Out 2021)
+	 */
 	public void dados() {
 		
 		Fornecedor fornecedor1 = new Fornecedor("Óticas Grassi", "46.029.170/0001-08", "49 52961-9739", "Santa Catarina", "grassi@fornecedor.com");
