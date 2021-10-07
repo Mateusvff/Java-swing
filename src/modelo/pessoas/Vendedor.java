@@ -1,7 +1,6 @@
 package modelo.pessoas;
 
 public class Vendedor extends Pessoa {
-	private int quantVendida;
 	private double salario;
 
 	public Vendedor(String nome, String telefone, String cpf, String email, double salario) {
@@ -15,7 +14,6 @@ public class Vendedor extends Pessoa {
 				"Nome: " + nome + "\n" +
 				"CPF: " + cpf + "\n" + 
 				"Email: " + email + "\n" +
-				"Quantidade vendida: " + quantVendida + "\n" + 
 				"Salário: " + salario;
 	}
 
@@ -25,14 +23,6 @@ public class Vendedor extends Pessoa {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
-	}
-
-	public int getQuantVendida() {
-		return quantVendida;
-	}
-
-	public void setQuantVendida(int quantVendida) {
-		this.quantVendida = quantVendida;
 	}
 
 }

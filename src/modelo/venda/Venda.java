@@ -4,13 +4,11 @@ import modelo.produtos.Oculos;
 
 public class Venda {
 	private Oculos oculos;
-	private String vendedor;
 	private int quantidade;
 	private double valor;
 
-	public Venda(String vendedor, Oculos oculos, int quantidade, double valor) {
+	public Venda(Oculos oculos, int quantidade, double valor) {
 		this.oculos = oculos;
-		this.vendedor = vendedor;
 		this.quantidade = quantidade;
 		this.valor = valor;
 	}
@@ -19,17 +17,8 @@ public class Venda {
 	public String toString() {
 		return "Dados da venda: " + "\n" + 
 				"Produto: " + oculos + "\n" +
-				"Vendedor: " + vendedor + "\n" +
 				"Quantidade vendida: " + quantidade + "\n" +
 				"Valor da venda: " + valor;
-	}
-
-	public String getVendedor() {
-		return vendedor;
-	}
-
-	public void setVendedor(String vendedor) {
-		this.vendedor = vendedor;
 	}
 
 	public Oculos getOculos() {

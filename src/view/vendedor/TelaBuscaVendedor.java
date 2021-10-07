@@ -70,8 +70,7 @@ public class TelaBuscaVendedor {
 				Vendedor retorno = controleVendedor.buscarVendedor(cpf); 
 				
 				listModel.addElement(retorno.getNome() + " - " + retorno.getCpf() + " - " + retorno.getTelefone() + 
-						     " - " + retorno.getEmail() + " - " + retorno.getCidade() + " - " + retorno.getSalario() + 
-						     " - " + retorno.getQuantVendida());
+						     " - " + retorno.getEmail() + " - " + retorno.getCidade() + " - " + retorno.getSalario());
 			
 			}
 			

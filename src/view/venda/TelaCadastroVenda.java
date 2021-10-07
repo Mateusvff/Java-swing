@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import controle.ControleCliente;
+import controle.ControleOculos;
 import controle.ControleVenda;
-import view.Principal;
+import modelo.produtos.Oculos;
+
+
 public class TelaCadastroVenda {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
@@ -49,14 +49,6 @@ public class TelaCadastroVenda {
 		idText.setBounds(110, 10, 180, 25);
 		panel.add(idText);
 		
-		JLabel vendedorLabel = new JLabel("Vendedor");
-		vendedorLabel.setBounds(20, 40, 80, 25);
-		panel.add(vendedorLabel);
-		
-		JTextField vendedorText = new JTextField(20);
-		vendedorText.setBounds(110, 40, 180, 25);
-		panel.add(vendedorText);
-		
 		JLabel quantLabel = new JLabel("Quantidade");
 		quantLabel.setBounds(20, 70, 80, 25);
 		panel.add(quantLabel);
@@ -81,6 +73,45 @@ public class TelaCadastroVenda {
 		JButton voltar = new JButton("Cancelar");
 		voltar.setBounds(205, 130, 85, 25);
 		panel.add(voltar);
+		
+		
+		
+		
+		cadastrarButton.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+
+				int idCadastro = Integer.parseInt(idText.getText());
+				int quantidade = Integer.parseInt(quantText.getText());
+				double valor = Double.parseDouble(valorText.getText());
+
+				for (int i = 0; i < ControleOculos.oculosProd.size(); i++) {
+					if (ControleOculos.oculosProd.get(i).getId() == idCadastro) {
+						 Oculos oculos = ControleOculos.oculosProd.get(i);
+						 ControleVenda controleVenda = new ControleVenda();
+						 controleVenda.cadastroVenda(oculos, quantidade, valor);
+						 
+						 System.out.println(oculos);
+						 System.out.println(quantidade);
+						 System.out.println(valor);
+					}
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+
+			}
+
+		});
+		
+		
 		
 		
 	/*	cadastrarButton.addActionListener(new ActionListener() {

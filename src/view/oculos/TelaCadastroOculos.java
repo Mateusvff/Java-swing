@@ -109,6 +109,7 @@ public class TelaCadastroOculos {
 			public void actionPerformed(ActionEvent e) {
 				
 				int id = Integer.parseInt(idText.getText());
+				
 				String marca = marcaText.getText();
 				String modelo = modeloText.getText();
 				String material = materialText.getText();
