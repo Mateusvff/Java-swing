@@ -131,23 +131,35 @@ public class TelaCadastroCliente {
 			 * @author Mateus Vinícius
 			 * @version 1.0 (Out 2021)
 			 */
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				valida();
+				new Principal();
+				
+				frame.dispose();
+			}
+			
+			public void valida() {
+				
 				String nome = nomeText.getText();
 				String telefone = telefoneText.getText();
 				String cidade = cidadeText.getText();
 				String cpf = cpfText.getText();
 				String email = emailText.getText();
 				
-				ControleCliente controleCliente = new ControleCliente();
-				controleCliente.cadastroClientes(nome, telefone, cidade, cpf, email);
 				
-				JOptionPane.showMessageDialog(null, "Cadastro realizado");
+				if(nomeText.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Não foi possível realizar o cadastro");
+				} else {
+					ControleCliente controleCliente = new ControleCliente();
+					controleCliente.cadastroClientes(nome, telefone, cidade, cpf, email);
+					JOptionPane.showMessageDialog(null, "Cadastro realizado");
+				}
 				
-				new Principal();
-				
-				frame.dispose();
 			}
+			
 		});
 	}
 }
