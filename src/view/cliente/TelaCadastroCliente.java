@@ -141,6 +141,8 @@ public class TelaCadastroCliente {
 				frame.dispose();
 			}
 			
+			//método que valida se o usuário inseriu um nome vazio
+			
 			public void valida() {
 				
 				String nome = nomeText.getText();
