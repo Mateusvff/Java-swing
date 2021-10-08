@@ -42,7 +42,7 @@ public class Validador {
 		
 		boolean aux = true;
 		
-		if(quantidadeVenda == 0) {
+		if(quantidadeVenda <= 0) {
 			aux = false;
 		} else {
 			aux = true;

@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import controle.ControleVenda;
 import modelo.venda.Venda;
