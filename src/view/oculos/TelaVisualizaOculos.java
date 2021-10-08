@@ -12,6 +12,11 @@ import javax.swing.JPanel;
 import controle.ControleOculos;
 import modelo.produtos.Oculos;
 
+/**
+ * Cria e configura o tamanho do frame de exibição, do botão, label e painel
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaVisualizaOculos {
 	private JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listaOculos = new DefaultListModel<>();
@@ -30,6 +35,12 @@ public class TelaVisualizaOculos {
 		
 	}
 
+	/**
+	 * Puxa os dados da lista de óculos cadastrado e apresenta na tela por meio do JPanel
+	 * @param panel painel que contém os fornecedores listados
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		if (ControleOculos.oculosProd.isEmpty()) {
 			panel.add(label);

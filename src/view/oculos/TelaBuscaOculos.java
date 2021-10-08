@@ -12,6 +12,11 @@ import javax.swing.JPanel;
 import controle.ControleOculos;
 import modelo.produtos.Oculos;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaBuscaOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listModel = new DefaultListModel<>();
@@ -26,6 +31,12 @@ public class TelaBuscaOculos {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Adiciona os componentes de botões, painel e textos ao frame anteriormente criado
+	 * @param panel painel que contém os demais componentes
+	 * @author Mateus Vinícius
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		panel.setLayout(null);
 
@@ -55,6 +66,13 @@ public class TelaBuscaOculos {
 		
 		buscaButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Realiza o método de busca dos óculos a partir do click do botão
+			 * @param e monitora a ação realizada no botão
+			 * @return o método retorna o produto,em forma de lista, que possui id idêntico ao procurado
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 				
 				int id = Integer.parseInt(idBusca.getText());

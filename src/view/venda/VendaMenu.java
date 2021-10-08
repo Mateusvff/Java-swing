@@ -8,6 +8,11 @@ import javax.swing.*;
 import principal.Principal;
 
 
+/**
+ * Exibe as opções referentes ao produto da loja
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class VendaMenu implements ActionListener{
 	private static JFrame principalVendas = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Vendas");
@@ -15,6 +20,12 @@ public class VendaMenu implements ActionListener{
 	private static JButton cadastrar = new JButton("Cadastrar");
 	private static JButton voltar = new JButton("Voltar");
 
+	/**
+	 * Define o tamanho e posição dos botões
+	 * Implementa o ActionListener para que os botões possam reconhecer o click
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public VendaMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(152, 10, 150, 30);
@@ -38,6 +49,11 @@ public class VendaMenu implements ActionListener{
 		voltar.addActionListener(this);
 	}
 
+	/**
+	 * Redireciona o usuário para a tela desejada
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		

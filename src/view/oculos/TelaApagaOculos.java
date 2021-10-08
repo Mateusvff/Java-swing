@@ -13,6 +13,11 @@ import javax.swing.JTextField;
 import controle.ControleOculos;
 import principal.Principal;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaApagaOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
@@ -26,6 +31,12 @@ public class TelaApagaOculos {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Cria um painel e adiciona componentes de busca
+	 * @param panel JPanel que contém o campo de preenchimento e label de instrução
+	 * @author Mateus Vinicius
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 	panel.setLayout(null);
 				
@@ -47,6 +58,11 @@ public class TelaApagaOculos {
 
 		apagarButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Realiza a busca do óculos a partir do id digitado e em seguida chama o método de deleção
+			 * @author Mateus Vinícius 
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 				try {
 					int produtoID = Integer.parseInt(idBusca.getText());

@@ -6,6 +6,11 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.*;
 
+/**
+ * Exibe as opções referentes aos vendedores da loja
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class VendedorMenu implements ActionListener {
 	private JFrame principalVendedor = new JFrame("Loja de Óculos");
 	private JLabel titulo = new JLabel("Vendedores");
@@ -15,6 +20,12 @@ public class VendedorMenu implements ActionListener {
 	private JButton buscar = new JButton("Buscar");
 	private JButton voltar = new JButton("Voltar");
 	
+	/**
+	 * Define o tamanho e posição dos botões e do frame
+	 * Implementa o ActionListener para que os botões possam reconhecer o click
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public VendedorMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(135, 10, 150, 30);
@@ -44,6 +55,11 @@ public class VendedorMenu implements ActionListener {
 		voltar.addActionListener(this);
 	}
 
+	/**
+	 * Redireciona o usuário para a tela desejada
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 

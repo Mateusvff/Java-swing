@@ -9,6 +9,11 @@ import javax.swing.JPanel;
 import controle.ControleVenda;
 import modelo.venda.Venda;
 
+/**
+ * Cria e configura o tamanho do frame de exibição, do botão, label e painel
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaVisualizaVenda {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 	private DefaultListModel<String> listaVendas = new DefaultListModel<>();
@@ -24,6 +29,13 @@ public class TelaVisualizaVenda {
 		frame.setVisible(true);
 	}
 
+	
+	/**
+	 * Puxa os dados da lista de vendas cadastradas e apresenta na tela por meio do JPanel
+	 * @param panel painel que contém as vendas listados
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		if (ControleVenda.vendas.isEmpty()) {
 			panel.add(label);

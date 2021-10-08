@@ -1,6 +1,7 @@
 package view.oculos;
 
 import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,6 +11,11 @@ import javax.swing.JLabel;
 
 import principal.Principal;
 
+/**
+ * Exibe as opções referentes ao produto da loja
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class OculosMenu implements ActionListener {
 	private static JFrame principalProdutos = new JFrame("Loja de Óculos");
 	private static JLabel titulo = new JLabel("Óculos");
@@ -19,6 +25,12 @@ public class OculosMenu implements ActionListener {
 	private static JButton deletar = new JButton("Deletar");
 	private static JButton buscar = new JButton("Buscar");
 
+	/**
+	 * Define o tamanho e posição dos botões
+	 * Implementa o ActionListener para que os botões possam reconhecer o click
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	public OculosMenu() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(152, 10, 150, 30);
@@ -48,6 +60,11 @@ public class OculosMenu implements ActionListener {
 		voltar.addActionListener(this);
 	}
 
+	/**
+	 * Redireciona o usuário para a tela desejada
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();

@@ -12,7 +12,11 @@ import controle.ControleOculos;
 import controle.ControleVenda;
 import modelo.produtos.Oculos;
 
-
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaCadastroVenda {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
@@ -26,6 +30,12 @@ public class TelaCadastroVenda {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Adiciona e configura os componentes ao frame
+	 * @param panel JPanel que recebe os componentes criados
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private static void placeComponents(JPanel panel) {
 
 		panel.setLayout(null);
@@ -64,6 +74,14 @@ public class TelaCadastroVenda {
 		
 		cadastrarButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Cadastra uma nova venda a partir dos dados preenchidos:
+			 * @param idCadastro um int que recebe os dados do óculos a partir do id digitado
+			 * @param quantidade um int que recebe a quantidade de óculos comprados
+			 * @param valor um double que recebe o valor total da compra
+			 * @author Juan Cerqueira
+			 * @version 1.0 (Out 2021)
+			 */
 			public void actionPerformed(ActionEvent e) {
 
 				int idCadastro = Integer.parseInt(idText.getText());

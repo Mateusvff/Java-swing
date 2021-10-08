@@ -13,6 +13,11 @@ import javax.swing.JTextField;
 import controle.ControleOculos;
 import principal.Principal;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaCadastroOculos {
 	private static JFrame frame = new JFrame("Loja de Óculos");
 
@@ -27,6 +32,12 @@ public class TelaCadastroOculos {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Adiciona e configura os componentes ao frame
+	 * @param panel JPanel que recebe os componentes criados
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private static void placeComponents(JPanel panel) {
 		
 		panel.setLayout(null);
@@ -105,6 +116,12 @@ public class TelaCadastroOculos {
 
 		cadastroButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Puxa os dados preenchidos na tela e aciona o método de cadastro de produtos
+			 * @param e monitora a ação realizada no botão
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				

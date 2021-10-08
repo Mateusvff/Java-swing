@@ -15,6 +15,11 @@ import javax.swing.text.MaskFormatter;
 import controle.ControleVendedor;
 import principal.Principal;
 
+/**
+ * Cria e configura o tamanho do frame de exibição
+ * @author Juan Cerqueira
+ * @version 1.0 (Out 2021)
+ */
 public class TelaApagaVendedor {
 	private JFrame frame = new JFrame("Loja de Óculos");
 
@@ -28,11 +33,25 @@ public class TelaApagaVendedor {
 		frame.setVisible(true);
 	}
 
+	/**
+	 * Adiciona um painel com um campo de preenchimento para o CPF,
+	 * botão com opção de voltar para o menu anterior,
+	 * botão para realizar a pesquisa
+	 * @param panel painél que contém o campo de preenchimento e botões
+	 * @author Juan Cerqueira
+	 * @version 1.0 (Out 2021)
+	 */
 	private void placeComponents(JPanel panel) {
 		panel.setLayout(null);
 
 		MaskFormatter mascaraCpf = null;
 
+		/**
+		 * Adiciona uma máscara de CPF ao campo de preenchimento
+		 * Limita o número de caracteres a serem inseridos
+		 * @author Mateus Vinícius
+		 * @version 1.0 (Out 2021)
+		 */
 		try {
 			mascaraCpf = new MaskFormatter("###.###.###-##");
 		} catch (ParseException e1) {
@@ -71,6 +90,11 @@ public class TelaApagaVendedor {
 
 		apagarButton.addActionListener(new ActionListener() {
 
+			/**
+			 * Realiza o método de deleção do vendedor
+			 * @author Mateus Vinícius
+			 * @version 1.0 (Out 2021)
+			 */
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ControleVendedor controleVendedor = new ControleVendedor();
