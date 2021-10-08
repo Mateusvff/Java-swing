@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import controle.ControleVenda;
 import modelo.venda.Venda;
 
@@ -42,8 +44,10 @@ public class TelaVisualizaVenda {
 		} else {
 			for (int i = 0; i < ControleVenda.vendas.size(); i++) {
 				Venda vendas = ControleVenda.vendas.get(i);
-				listaVendas.addElement("Produto: " + vendas.getOculos() + "\n" + "- " + "Quantidade: "
-						+ vendas.getQuantidade()  + "\n" + " - " + "Valor da venda: " + vendas.getValor());
+				
+				listaVendas.addElement("Modelo: " + vendas.getOculos().getModelo() + " - Quantidade: " + vendas.getQuantidade() + 
+						" - Valor: " + vendas.getValor());
+				
 			}
 		}
 
